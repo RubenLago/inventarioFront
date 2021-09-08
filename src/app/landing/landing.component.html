@@ -1,19 +1,38 @@
-<ul class="nav">
+<nav class="menu pt-2 shadow navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img class="img-fluid logo" src="/assets/logoWhite.png" alt="zehnstock">
+        </a>
 
-    <li class="nav-item">
-        <img src="" alt="">
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled">Servicios</a>
-    </li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="" routerLinkActive="active">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="" routerLinkActive="active">Registrar</a>
+                </li>
 
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page">Nosotros</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Entrar</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Registrarse</a>
-    </li>
-</ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id=imgfondo>
+    <p>
+        registrar, enviar, consulta
+        <span>
+            ZEHNSTOCK
+        </span>
+        &mdash; gestor de inventarios &mdash;
+    </p>
+</div>

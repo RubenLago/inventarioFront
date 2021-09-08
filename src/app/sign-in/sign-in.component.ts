@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup
+
+  constructor(
+    private userService: UsersService
+  ) {
+    this.formulario = new FormGroup({
+      correo: new FormControl(),
+      password: new FormControl(),
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  async onSubmit() {
+    const response = await this.userService.login(this.formulario.value);
+    console.log(this.formulario.value)
   }
 
 }

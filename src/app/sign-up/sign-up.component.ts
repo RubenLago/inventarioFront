@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit {
   ) {
     this.formulario = new FormGroup({
       nombre: new FormControl(),
-      apellido: new FormControl(),
+      apellidos: new FormControl(),
       correo: new FormControl(),
       password: new FormControl(),
       repeat_password: new FormControl(),
@@ -30,7 +30,7 @@ export class SignUpComponent implements OnInit {
 
   async onSubmit() {
     const response = await this.usersService.registro(this.formulario.value);
-    console.log(response)
+    console.log(this.formulario.value)
 
   }
 

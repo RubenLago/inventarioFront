@@ -1,0 +1,14 @@
+form{
+    align-content: center;
+}
+
+.container{
+    border: 1px solid #fd79a8;
+}
+
+footer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}

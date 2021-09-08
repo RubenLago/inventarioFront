@@ -1,0 +1,32 @@
+<head>
+    <meta charset="utf-8">
+    <title>Sign - in</title>
+</head>
+
+<body class="text-center">
+
+    <main class="form-signin">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <img class="mb-4" src="/assets/ZehnStockBlack.png" alt="" width="100" height="100">
+            <h1 class="h3 mb-3 fw-normal">Acceder a tu proxima vida</h1>
+            <h5>Introduce tu usuario:</h5>
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="name@example.com" formControlName="correo">
+                <label for="floatingInput">Correo</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <label for=" floatingPassword">Contraseña</label>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Recordar Usuario
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        </form>
+    </main>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; ZehnStock Company All Right Reserved 2021</p>
+    </footer>
+</body>

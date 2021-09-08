@@ -1,0 +1,24 @@
+<h1>Bienvenido a ZehnStock</h1>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">Nombre:</label>
+        <input type="text" class="form-control" formControlName="nombre">
+    </div>
+    <div>
+        <label for="">Apellidos:</label>
+        <input type="text" class="form-control" formControlName="apellido">
+    </div>
+    <div>
+        <label for="">Correo:</label>
+        <input type="text" class="form-control" formControlName="correo">
+    </div>
+    <div>
+        <label for="">Contraseña:</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div>
+        <label for="">Repetir contraseña:</label>
+        <input type="password" class="form-control" formControlName="repeat_password">
+    </div>
+
+</form>

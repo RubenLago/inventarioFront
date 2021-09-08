@@ -1,0 +1,32 @@
+.logo{
+    max-width: 100px;
+}
+.menu{
+    border-bottom: 3px solid #fd79a8;
+    background-color: #2d3436;   
+}
+
+/* imagen cabecera */
+#imgfondo{
+    background-image: url(..//../assets/img_04.jpg);
+    background-size: cover;
+    opacity: 0.8;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* texto cabecera*/
+    .titulo{
+       font-size: 42px;
+       color: white;
+    }
+    .titulo h1{
+       font-size: 80px;
+    }
+    span {
+        animation: escribir 5s steps(30) infinite alternate;
+    }
+
+    

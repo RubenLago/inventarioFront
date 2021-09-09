@@ -1,12 +1,86 @@
-h1{
-    text-align: center;
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: var(--fuenteprincipal);
+  overflow: hidden;
 }
 
-.container{
-    display: flex;
-    flex-wrap: wrap ;
+#recordatorio{
+    padding-top: 10px;
 }
 
-div.card{
-    margin: 20px;
+.g-signin2 {
+     margin: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+}
+
+.form-signin {
+    border-radius: 20px;
+  box-shadow: 0 0 10px var(--colorsecundario); 
+  padding: 40px;
+  margin: 150px auto;
+  width: 500px;
+  font-weight: 900;
+}
+
+.form-signin h1{
+    font-weight: 1000;
+    font-size: 3.5em;
+}
+
+.form-signin .form-floating{
+    font-weight: 600;
+    
+}
+
+
+.form-floating{
+    padding: 2px;
+}
+
+#signin{
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3em;
+    padding: 8px;
+    width: 100%;       
+    background-color: #50595c;
+    color:white;
+}
+
+#signin:hover{
+    color: var(--colorsecundario);
+    background-color: var(--colorprincipal);
+}
+
+footer{
+    bottom: 0;
+    position: absolute;
+    color: #50595c;
+    width: 100%;
+    font-weight: 600;
+}
+
+#crearcuenta{
+    padding-top: 40px;
+    font-weight: 600;
+}
+
+#recordatorio{
+    font-weight: 600;
+}
+
+#crearcuenta p a{
+    text-decoration: none;
+    color: var(--colorsecundario);
+}
+
+#crearcuenta p a:hover{
+    color: var(--colorprincipal);
+
 }

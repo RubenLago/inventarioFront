@@ -20,9 +20,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block;
 }
 
+:root {
+--colorprincipal: #2d3436;
+--colorsecundario: #fd79a8;
+--fuenteprincipal: 'Hind Siliguri', sans-serif;
+}
+
+
 body {
     line-height: 1;
+
 }
+
 
 ol, ul {
     list-style: none;
@@ -42,4 +51,6 @@ table {
     border-spacing: 0;
 }
 
-
+.abcRioButton{
+    width: 100% !important;
+}

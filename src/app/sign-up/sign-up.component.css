@@ -1,14 +1,18 @@
-form{
-    align-content: center;
+main h1{
+    text-align: center;
+    font-family: var(--fuenteprincipal);
+    padding-top: 100px;
+    font-size: 3.5em;
 }
 
-.container{
-    border: 1px solid #fd79a8;
+.container{ 
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--colorsecundario); 
+  font-weight: 600;
 }
 
 footer{
     display: flex;
     position: absolute;
     bottom: 0;
-    text-align: center;
 }

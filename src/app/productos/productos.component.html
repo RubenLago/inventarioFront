@@ -1,12 +1,15 @@
 <div class="row p-4">
     <h5 class="col-9">Productos</h5>
     <p class="col-1">Cambiar vista</p>
-    <div class="col-1"><button type="button" class="btn btn-secondary">Columnas</button></div>
-    <div class="col-1"><button type="button" class="btn btn-secondary">Lista</button></div>
+    <div class="col-1"><button (click)="cambiarFormato('col')" type="button" class="btn btn-secondary">Columnas</button>
+    </div>
+    <div class="col-1"><button (click)="cambiarFormato('row')" type="button" class="btn btn-secondary">Lista</button>
+    </div>
 </div>
 
 <div class="container">
     <div class="row">
+        <!-- [ngStyle]="cambiarFormato"  cambiar formato-->
         <div class="col-4" *ngFor="let producto of arrProductos">
             <div class="shadow-lg p-3 mb-5 bg-body rounded">
                 <h3 class="text-center">{{producto.nombre}}</h3>

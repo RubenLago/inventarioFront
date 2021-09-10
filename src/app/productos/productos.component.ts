@@ -9,9 +9,11 @@ import { PostsService } from '../services/posts.service';
 export class ProductosComponent implements OnInit {
 
   arrProductos: any[];
+  formatoProductos: any;
 
   constructor(private postsService: PostsService) {
-    this.arrProductos = []
+    this.arrProductos = [];
+    this.formatoProductos = {}
 
   }
 
@@ -19,6 +21,17 @@ export class ProductosComponent implements OnInit {
     this.postsService.getAll()
       .then(posts => this.arrProductos = posts) //console.log(posts)
       .catch(error => console.log(error))
+  }
+
+  cambiarFormato(pFormato: string) {
+    switch (pFormato) {
+      case 'col':
+        this.formatoProductos = 'col-4';
+        break;
+      case 'row':
+        this.formatoProductos = 'col-12';
+        break;
+    }
   }
 
 }

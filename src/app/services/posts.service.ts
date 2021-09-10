@@ -6,10 +6,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostsService {
 
-  constructor(private httpClient: HttpClient) { }
+  baseUrl: string;
 
-  getAll() {
-    this.httpClient.get()
+  constructor(private httpClient: HttpClient) {
+
+    this.baseUrl = 'http://localhost:3000/posts'
+
+  }
+
+  getAll(): Promise<any[]> {
+    return this.httpClient.get<any>(this.baseUrl).toPromise();
   }
 
 }

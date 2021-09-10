@@ -10,7 +10,7 @@ export class PostsService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/posts'
+    this.baseUrl = 'http://localhost:3000/productos'
 
   }
 

@@ -8,9 +8,17 @@ import { PostsService } from '../services/posts.service';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor(private postsService: PostsService) { }
+  arrProductos: any[];
+
+  constructor(private postsService: PostsService) {
+    this.arrProductos = []
+
+  }
 
   ngOnInit(): void {
+    this.postsService.getAll()
+      .then(posts => this.arrProductos = posts) //console.log(posts)
+      .catch(error => console.log(error))
   }
 
 }

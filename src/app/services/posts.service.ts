@@ -10,12 +10,12 @@ export class PostsService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/productos'
+    this.baseUrl = 'http://localhost:3000/'
 
   }
 
   getAll(): Promise<any[]> {
-    return this.httpClient.get<any>(this.baseUrl).toPromise();
+    return this.httpClient.get<any>(this.baseUrl + 'productos').toPromise();
   }
 
 }

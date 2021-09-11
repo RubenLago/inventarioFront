@@ -7,13 +7,14 @@ import { ProductosComponent } from './productos/productos.component';
 import { Usuarios } from './models/usuario.model';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'login', component: SignInComponent },
   { path: 'registro', component: SignUpComponent },
   { path: 'home', component: LandingComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'productos/:id', component: ProductosComponent },
-  { path: 'usuario', component: SignUpComponent },
-  { path: 'listaUsuario', component: Usuarios }
+  { path: 'listaUsuario', component: Usuarios },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

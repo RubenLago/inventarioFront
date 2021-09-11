@@ -19,7 +19,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     SignUpComponent,
     LandingComponent,
     ProductosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+
   ],
   imports: [
     BrowserModule,

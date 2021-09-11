@@ -1,4 +1,4 @@
-export class Usuarios {
+/* export class Usuarios {
     nombre: string,
     email: string,
     password: string,
@@ -6,4 +6,4 @@ export class Usuarios {
     telefono: number
 
 
-}
+} */

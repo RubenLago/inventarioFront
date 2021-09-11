@@ -25,9 +25,12 @@ export class ProductosComponent implements OnInit {
       .catch(error => console.log(error))
   }
 
+  /* cambio vista */
   onClickMostrar() {
     this.mostrar = !this.mostrar
   }
+  /* editar un artículo */
+
 
 
 

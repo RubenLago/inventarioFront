@@ -16,9 +16,10 @@
                 <p>Precio sin Iva:{{producto.precioSin}}</p>
                 <p>Iva:{{producto.iva}}</p>
                 <p>Precio con Iva:{{producto.precioCon}}</p>
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                    data-bs-target="modalEditar">Edita</button>
+                <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="modalEditar">Edita</button> -->
                 <!-- MODAL NO ENLAZADA -->
+                <a class="btn btn.dark" routerLink="/productos/{{producto.id}}">Editar</a>
                 <button type="button" class="btn btn-dark">Sumar c</button>
                 <button type="button" class="btn btn-dark">Restar c</button>
             </div>

@@ -9,6 +9,7 @@
 
 <div class="container">
     <div class="row">
+
         <!-- [ngStyle]="cambiarFormato"  cambiar formato-->
         <div class="col-4" *ngFor="let producto of arrProductos">
             <div class="shadow-lg p-3 mb-5 bg-body rounded">
@@ -20,5 +21,8 @@
                 <p>Precio con Iva:{{producto.precioCon}}</p>
             </div>
         </div>
+        <button type="button" class="btn btn-outline-secondary"> AÑADIR NUEVO PRODUCTO <i
+                class="fas fa-plus-square"></i></button>
     </div>
+
 </div>

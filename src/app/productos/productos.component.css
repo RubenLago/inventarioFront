@@ -1,0 +1,13 @@
+.btn-outline-secondary{
+    color: var(--colorsecundario);
+    background-color: var(--colorprincipal);
+    margin-bottom: 60px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.btn-outline-secondary:hover {
+	color: var(--colorprincipal);
+	background-color: var(--colorsecundario);
+	border-color: var(--colorprincipal);
+}

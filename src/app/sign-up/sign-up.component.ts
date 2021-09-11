@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { UsersService } from '../users.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,7 +13,6 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private usersService: UsersService
-
   ) {
     this.formulario = new FormGroup({
       nombre: new FormControl(),

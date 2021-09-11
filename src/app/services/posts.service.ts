@@ -26,6 +26,6 @@ export class PostsService {
   getAll(): Promise<any[]> {
     return this.httpClient.get<any>(this.baseUrl + 'productos').toPromise();
   }
-  editar():
+
 
 }

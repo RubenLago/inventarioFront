@@ -16,6 +16,11 @@
                 <p>Precio sin Iva:{{producto.precioSin}}</p>
                 <p>Iva:{{producto.iva}}</p>
                 <p>Precio con Iva:{{producto.precioCon}}</p>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="modalEditar">Edita</button>
+                <!-- MODAL NO ENLAZADA -->
+                <button type="button" class="btn btn-dark">Sumar c</button>
+                <button type="button" class="btn btn-dark">Restar c</button>
             </div>
         </div>
     </div>
@@ -33,6 +38,8 @@
                 <th scope="col">Precio sin iva</th>
                 <th scope="col">Iva</th>
                 <th scope="col">Precio con iva</th>
+                <th scope="col">Editar</th>
+
             </tr>
         </thead>
         <tbody>
@@ -44,6 +51,7 @@
                 <td>{{producto.precioSin}}</td>
                 <td>{{producto.iva}}</td>
                 <td>{{producto.precioCon}}</td>
+                <td> <button type="button" class="btn btn-dark"></button></td>
             </tr>
         </tbody>
     </table>

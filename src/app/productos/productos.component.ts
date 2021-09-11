@@ -14,7 +14,7 @@ export class ProductosComponent implements OnInit {
 
   constructor(private postsService: PostsService) {
     this.arrProductos = [];
-    this.mostrar = false;
+    this.mostrar = true;
 
 
   }

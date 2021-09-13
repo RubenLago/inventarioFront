@@ -11,6 +11,7 @@ import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
 import { FormsModule } from '@angular/forms';
 import { FormCreacionProductosComponent } from './form-creacion-productos/form-creacion-productos.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { FormCreacionProductosComponent } from './form-creacion-productos/form-c
     SignUpComponent,
     LandingComponent,
     ProductosComponent,
-    FormCreacionProductosComponent
+    FormCreacionProductosComponent,
+    UsuariosComponent,
+
   ],
   imports: [
     BrowserModule,

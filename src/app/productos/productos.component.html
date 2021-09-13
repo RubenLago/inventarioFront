@@ -1,13 +1,11 @@
 <div class="row p-4">
-    <h5 class="col-9">Productos</h5>
-    <p class="col-1">Cambiar vista</p>
-    <div class="col-1"><button (click)="cambiarFormato('col')" type="button" class="btn btn-secondary">Columnas</button>
-    </div>
-    <div class="col-1"><button (click)="cambiarFormato('row')" type="button" class="btn btn-secondary">Lista</button>
+    <h5 class="col-10">Productos</h5>
+    <div class="col-2"><button (click)="onClickMostrar()" type="button" class="btn btn-secondary">Cambiar
+            vista</button>
     </div>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="mostrar">
     <div class="row">
 
         <!-- [ngStyle]="cambiarFormato"  cambiar formato-->
@@ -19,10 +17,46 @@
                 <p>Precio sin Iva:{{producto.precioSin}}</p>
                 <p>Iva:{{producto.iva}}</p>
                 <p>Precio con Iva:{{producto.precioCon}}</p>
+                <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="modalEditar">Edita</button> -->
+                <!-- MODAL NO ENLAZADA -->
+                <a class="btn btn.dark" routerLink="/productos/{{producto.id}}">Editar</a>
+                <button type="button" class="btn btn-dark">Sumar c</button>
+                <button type="button" class="btn btn-dark">Restar c</button>
             </div>
         </div>
         <button type="button" class="btn btn-outline-secondary"> AÑADIR NUEVO PRODUCTO <i
                 class="fas fa-plus-square"></i></button>
     </div>
+</div>
 
+<!-- tabla -->
+<div class="container" *ngIf="!mostrar">
+    <table class="table table-secondary table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Formato</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio sin iva</th>
+                <th scope="col">Iva</th>
+                <th scope="col">Precio con iva</th>
+                <th scope="col">Editar</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of arrProductos">
+                <th scope="row">{{producto.id}}</th>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.formato}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>{{producto.precioSin}}</td>
+                <td>{{producto.iva}}</td>
+                <td>{{producto.precioCon}}</td>
+                <td> <button type="button" class="btn btn-dark"></button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

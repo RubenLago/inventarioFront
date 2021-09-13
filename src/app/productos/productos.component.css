@@ -11,3 +11,8 @@
 	background-color: var(--colorsecundario);
 	border-color: var(--colorprincipal);
 }
+
+.tabla{
+    text-align: center;
+
+}

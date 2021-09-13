@@ -4,7 +4,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
-import { FormCreacionProductosComponent } from './form-creacion-productos/form-creacion-productos.component';
 /* import { Usuarios } from './models/usuario.model'; */
 
 const routes: Routes = [

@@ -2,12 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export interface Producto {
-  nombre: string,
-  formato: string,
-  cantidad: string,
-  preciosin: string,
-  iva: string,
-  precioCon: string,
 }
 
 @Injectable({
@@ -17,7 +11,8 @@ export class PostsService {
 
   baseUrl: string;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(
+    private httpClient: HttpClient) {
 
     this.baseUrl = 'http://localhost:3000/'
 
@@ -28,4 +23,13 @@ export class PostsService {
   }
 
 
+  newProduct(formsValue: Producto) {
+    return this.httpClient.post(`${this.baseUrl}productos/create`, formsValue).toPromise()
+
+  }
+
+
+
 }
+
+

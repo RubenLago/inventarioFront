@@ -4,6 +4,57 @@
             vista</button>
     </div>
 </div>
+<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addproduct"> AÑADIR
+    NUEVO PRODUCTO <i class="fas fa-plus-square"></i></button>
+
+<!-- Modal -->
+<div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addproduct">Añadir nuevo producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formulario" (ngSubmit)="addProduct()">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre del producto: </label>
+                        <input type="text" class="form-control" formControlName="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formato" class="form-label">Formato: </label>
+                        <input type="text" class="form-control" formControlName="formato">
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoria" class="form-label">Categoria </label>
+                        <select id="disabledSelect" class="form-select">
+                            <option>Bodega</option>
+                            <option>Refrescos</option>
+                            <option>Café</option>
+                            <option>Destilados</option>
+                        </select>
+                    </div>
+                    <div class=" mb-3">
+                        <label for="cantidad" class="form-label">Cantidad: </label>
+                        <input type="text" class="form-control" formControlName="cantidad">
+                    </div>
+                    <div class="mb-3">
+                        <label for="precioSin" class="form-label">Precio sin iva: </label>
+                        <input type="text" class="form-control" formControlName="precioSin">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iva" class="form-label">IVA:</label>
+                        <input type="text" class="form-control" formControlName="iva">
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar
+                        Cambios</button>
+                    <button type="button" class="btn btn-primary" type="submit" data-bs-dismiss="modal"
+                        aria-label="Close">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container" *ngIf="mostrar">
     <div class="row">
@@ -14,35 +65,34 @@
                 <h3 class="text-center">{{producto.nombre}}</h3>
                 <p>Formato:{{producto.formato}}</p>
                 <p>Cantidad:{{producto.cantidad}}</p>
+                <p>Categoria: {{producto.categoria}}</p>
                 <p>Precio sin Iva:{{producto.precioSin}}</p>
                 <p>Iva:{{producto.iva}}</p>
                 <p>Precio con Iva:{{producto.precioCon}}</p>
                 <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
                     data-bs-target="modalEditar">Edita</button> -->
                 <!-- MODAL NO ENLAZADA -->
-                <a class="btn btn.dark" routerLink="/productos/{{producto.id}}">Editar</a>
                 <button type="button" class="btn btn-dark">Sumar c</button>
                 <button type="button" class="btn btn-dark">Restar c</button>
             </div>
         </div>
-        <button type="button" class="btn btn-outline-secondary"> AÑADIR NUEVO PRODUCTO <i
-                class="fas fa-plus-square"></i></button>
     </div>
 </div>
 
 <!-- tabla -->
 <div class="container" *ngIf="!mostrar">
-    <table class="table table-secondary table-striped">
+    <table id="tabla" class="table table-secondary table-striped">
         <thead>
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Producto</th>
                 <th scope="col">Formato</th>
                 <th scope="col">Cantidad</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Precio sin iva</th>
                 <th scope="col">Iva</th>
                 <th scope="col">Precio con iva</th>
-                <th scope="col">Editar</th>
+                <th colspan="2" scope="col">Editar</th>
 
             </tr>
         </thead>
@@ -52,10 +102,12 @@
                 <td>{{producto.nombre}}</td>
                 <td>{{producto.formato}}</td>
                 <td>{{producto.cantidad}}</td>
+                <td>{{producto.categoria}}</td>
                 <td>{{producto.precioSin}}</td>
                 <td>{{producto.iva}}</td>
                 <td>{{producto.precioCon}}</td>
-                <td> <button type="button" class="btn btn-dark"></button></td>
+                <td> <button type="button" class="btn btn-dark">Editar</button></td>
+                <td> <button type="button" class="btn btn-dark">Borrar</button></td>
             </tr>
         </tbody>
     </table>

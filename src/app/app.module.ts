@@ -10,7 +10,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
 import { FormsModule } from '@angular/forms';
-import { FormCreacionProductosComponent } from './form-creacion-productos/form-creacion-productos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     SignUpComponent,
     LandingComponent,
     ProductosComponent,
-    FormCreacionProductosComponent,
     UsuariosComponent,
 
   ],

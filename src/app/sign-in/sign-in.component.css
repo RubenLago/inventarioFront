@@ -60,8 +60,8 @@ body {
 
 footer{
     bottom: 0;
-    position: absolute;
     color: #50595c;
+    position: absolute;
     width: 100%;
     font-weight: 600;
 }
@@ -75,12 +75,12 @@ footer{
     font-weight: 600;
 }
 
-#crearcuenta p a{
+#crearcuenta a{
     text-decoration: none;
     color: var(--colorsecundario);
 }
 
-#crearcuenta p a:hover{
+#crearcuenta a:hover{
     color: var(--colorprincipal);
 
 }

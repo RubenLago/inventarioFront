@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PostsService } from '../services/posts.service';
+import { postsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-productos',
@@ -14,7 +14,7 @@ export class ProductosComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(
-    private postsService: PostsService,
+    private postsService: postsService,
     private router: Router) {
     this.arrProductos = [];
     this.mostrar = true;
@@ -28,7 +28,6 @@ export class ProductosComponent implements OnInit {
       precioSin: new FormControl('', []),
     })
 
-
   }
 
   ngOnInit(): void {
@@ -37,11 +36,7 @@ export class ProductosComponent implements OnInit {
       .catch(error => console.log(error))
   }
 
-  /* cambio vista */
-  onClickMostrar() {
-    this.mostrar = !this.mostrar
-  }
-  /* editar un artículo */
+
 
   async addProduct() {
     const newProduct = await this.postsService.newProduct(this.formulario.value)

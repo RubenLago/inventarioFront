@@ -4,4 +4,5 @@ interface Usuarios {
     password: string,
     imagen: string,
     telefono: number
+
 }

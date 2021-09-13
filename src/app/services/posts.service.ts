@@ -7,20 +7,35 @@ export interface Producto {
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class postsService {
 
   baseUrl: string;
 
   constructor(
     private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/'
+    this.baseUrl = 'http://localhost:3000'
 
   }
 
   getAll(): Promise<any[]> {
-    return this.httpClient.get<any>(this.baseUrl + 'productos').toPromise();
+    return this.httpClient.get<any>(this.baseUrl + '/productos').toPromise();
   }
+
+  /* updateProducto(producto): Promise<[]> {
+    return this.httpClient.post<any>(this.baseUrl + '')
+  }
+ */
+
+  editProduct(formValues: Producto) {
+    return this.httpClient.put(this.baseUrl + '/productos', formValues).toPromise()
+
+  }
+
+  /* alternativa */
+  // uddate({ id, nombre, formato, cantidad, precioSin, iva }): Promise<any> {
+  //   return this.httpClient.put(this.baseUrl + '/productos' + `${id}`)
+  // }
 
 
   newProduct(formsValue: Producto) {

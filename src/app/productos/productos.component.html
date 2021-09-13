@@ -1,8 +1,5 @@
 <div class="row p-4">
     <h5 class="col-10">Productos</h5>
-    <div class="col-2"><button (click)="onClickMostrar()" type="button" class="btn btn-secondary">Cambiar
-            vista</button>
-    </div>
 </div>
 <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addproduct"> AÑADIR
     NUEVO PRODUCTO <i class="fas fa-plus-square"></i></button>
@@ -82,33 +79,50 @@
 <!-- tabla -->
 <div class="container" *ngIf="!mostrar">
     <table id="tabla" class="table table-secondary table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Producto</th>
-                <th scope="col">Formato</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Precio sin iva</th>
-                <th scope="col">Iva</th>
-                <th scope="col">Precio con iva</th>
-                <th colspan="2" scope="col">Editar</th>
+        <!-- tabla -->
+        <div class="container">
+            <table class="table table-secondary table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Formato</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Precio sin iva</th>
+                        <th scope="col">Iva</th>
+                        <th scope="col">Precio con iva</th>
+                        <th colspan="2" scope="col">Editar</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let producto of arrProductos">
-                <th scope="row">{{producto.id}}</th>
-                <td>{{producto.nombre}}</td>
-                <td>{{producto.formato}}</td>
-                <td>{{producto.cantidad}}</td>
-                <td>{{producto.categoria}}</td>
-                <td>{{producto.precioSin}}</td>
-                <td>{{producto.iva}}</td>
-                <td>{{producto.precioCon}}</td>
-                <td> <button type="button" class="btn btn-dark">Editar</button></td>
-                <td> <button type="button" class="btn btn-dark">Borrar</button></td>
-            </tr>
-        </tbody>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of arrProductos">
+                        <th scope="row">{{producto.id}}</th>
+                        <td>{{producto.nombre}}</td>
+                        <td>{{producto.formato}}</td>
+                        <td>{{producto.cantidad}}</td>
+                        <td>{{producto.categoria}}</td>
+                        <td>{{producto.precioSin}}</td>
+                        <td>{{producto.iva}}</td>
+                        <td>{{producto.precioCon}}</td>
+                        <td> <button type="button" class="btn btn-dark">Editar</button></td>
+                        <td> <button type="button" class="btn btn-dark">Borrar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- modal -->
+        <div *ngFor="let producto of arrProductos" class="modal fade" [id]="'editModal'+producto.id" tabindex="-1"
+            aria-labelledby="editModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- formu -->
+                    <app-form-product [producto]="producto"></app-form-product>
+                </div>
+            </div>
+        </div>
     </table>
 </div>
+<!-- fin modal -->

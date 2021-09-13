@@ -27,7 +27,6 @@ export class FormProductComponent implements OnInit {
       precioSin: new FormControl(''),
       iva: new FormControl(''),
 
-
     }
     )
   }

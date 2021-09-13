@@ -12,6 +12,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { FormsModule } from '@angular/forms';
 import { FormCreacionProductosComponent } from './form-creacion-productos/form-creacion-productos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { FormProductComponent } from './form-product/form-product.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     ProductosComponent,
     FormCreacionProductosComponent,
     UsuariosComponent,
+    FormProductComponent,
 
   ],
   imports: [

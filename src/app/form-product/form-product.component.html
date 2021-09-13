@@ -1,11 +1,17 @@
 <form [formGroup]="formularioEdit" (ngSubmit)="onEdit()">
-    <div class="modal-header">
+    <div class="modal-header" class="ng-dirty ng-touched ng-valid">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
         <div><label for="">Nombre</label><input type="text" formControlName="nombre"></div>
+        <div class="error" *ngIf="formularioEdit.controls.nombre.errors">
+            El campo nombre no puede estar vacío
+        </div>
         <div><label for="">Formato</label><input type=" text" formControlName="formato"></div>
         <div><label for="">Cantidad</label><input type="text" formControlName="cantidad"></div>
+        <div class="error" *ngIf="formularioEdit.controls.cantidad.errors">
+            El campo cantidad no puede estar vacío
+        </div>
         <div><label for="">Precio sin iva</label><input type="text" formControlName="precioSin"></div>
         <div><label for="">Iva</label><input type="text" formControlName="iva"></div>
     </div>

@@ -46,6 +46,7 @@ export class FormProductComponent implements OnInit {
     }
   }
 
+
   /* editar un artículo */
   onEdit() {
     console.log(this.formularioEdit.value)

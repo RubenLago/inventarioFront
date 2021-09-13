@@ -37,8 +37,8 @@ export class postsService {
   // }
 
 
-  newProduct(formsValue: Producto) {
-    return this.httpClient.post(`${this.baseUrl}productos/create`, formsValue).toPromise()
+  newProduct(formsValue: Producto): Promise<any> {
+    return this.httpClient.post(`${this.baseUrl}/productos/create`, formsValue).toPromise()
 
   }
 

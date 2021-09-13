@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Producto } from '../services/posts.service';
+import { Producto } from '../models/producto.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { postsService } from '../services/posts.service';
+
 
 @Component({
   selector: 'app-form-product',
@@ -41,7 +42,7 @@ export class FormProductComponent implements OnInit {
         cantidad: new FormControl(this.producto!.cantidad, [
           Validators.required
         ]),
-        precioSin: new FormControl(this.producto!.preciosin),
+        precioSin: new FormControl(this.producto!.precioSin),
         iva: new FormControl(this.producto!.iva),
 
       }
@@ -55,7 +56,6 @@ export class FormProductComponent implements OnInit {
     updateProduct.id = this.producto!.id;
     const editProduct = await this.postsService.editProduct(
       updateProduct)
-
   }
 
 

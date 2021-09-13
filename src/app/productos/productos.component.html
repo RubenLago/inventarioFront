@@ -53,31 +53,9 @@
     </div>
 </div>
 
-<div class="container" *ngIf="mostrar">
-    <div class="row">
-
-        <!-- [ngStyle]="cambiarFormato"  cambiar formato-->
-        <div class="col-4" *ngFor="let producto of arrProductos">
-            <div class="shadow-lg p-3 mb-5 bg-body rounded">
-                <h3 class="text-center">{{producto.nombre}}</h3>
-                <p>Formato:{{producto.formato}}</p>
-                <p>Cantidad:{{producto.cantidad}}</p>
-                <p>Categoria: {{producto.categoria}}</p>
-                <p>Precio sin Iva:{{producto.precioSin}}</p>
-                <p>Iva:{{producto.iva}}</p>
-                <p>Precio con Iva:{{producto.precioCon}}</p>
-                <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                    data-bs-target="modalEditar">Edita</button> -->
-                <!-- MODAL NO ENLAZADA -->
-                <button type="button" class="btn btn-dark">Sumar c</button>
-                <button type="button" class="btn btn-dark">Restar c</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- tabla -->
-<div class="container" *ngIf="!mostrar">
+<div class="container">
     <table id="tabla" class="table table-secondary table-striped">
         <!-- tabla -->
         <div class="container">
@@ -106,23 +84,25 @@
                         <td>{{producto.precioSin}}</td>
                         <td>{{producto.iva}}</td>
                         <td>{{producto.precioCon}}</td>
-                        <td> <button type="button" class="btn btn-dark">Editar</button></td>
+                        <td> <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                [attr.data-bs-target]="'#editModal'+producto.id">Editar</button></td>
                         <td> <button type="button" class="btn btn-dark">Borrar</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- modal -->
-        <div *ngFor="let producto of arrProductos" class="modal fade" [id]="'editModal'+producto.id" tabindex="-1"
-            aria-labelledby="editModal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- formu -->
-                    <app-form-product [producto]="producto"></app-form-product>
-                </div>
-            </div>
-        </div>
     </table>
+</div>
+
+<!-- modal -->
+<div *ngFor="let producto of arrProductos" class="modal fade" [id]="'editModal'+producto.id" tabindex="-1"
+    aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- formu -->
+            <app-form-product [producto]="producto"></app-form-product>
+        </div>
+    </div>
 </div>
 <!-- fin modal -->

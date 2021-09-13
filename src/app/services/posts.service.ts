@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Producto } from '../models/producto.model';
 
-export interface Producto {
-}
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +26,7 @@ export class postsService {
   }
  */
 
-  editProduct(formValues: Producto) {
+  editProduct(formValues: Producto): Promise<any> {
     return this.httpClient.put(this.baseUrl + '/productos', formValues).toPromise()
 
   }

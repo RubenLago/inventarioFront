@@ -27,5 +27,11 @@ export class PostsService {
     return this.httpClient.get<any>(this.baseUrl + 'productos').toPromise();
   }
 
+  /* updateProducto(producto): Promise<[]> {
+    return this.httpClient.post<any>(this.baseUrl + '')
+  }
+ */
+
+
 
 }

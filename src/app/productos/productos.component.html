@@ -1,37 +1,10 @@
 <div class="row p-4">
     <h5 class="col-10">Productos</h5>
-    <div class="col-2"><button (click)="onClickMostrar()" type="button" class="btn btn-secondary">Cambiar
-            vista</button>
-    </div>
-</div>
 
-<div class="container" *ngIf="mostrar">
-    <div class="row">
-
-        <!-- [ngStyle]="cambiarFormato"  cambiar formato-->
-        <div class="col-4" *ngFor="let producto of arrProductos">
-            <div class="shadow-lg p-3 mb-5 bg-body rounded">
-                <h3 class="text-center">{{producto.nombre}}</h3>
-                <p>Formato:{{producto.formato}}</p>
-                <p>Cantidad:{{producto.cantidad}}</p>
-                <p>Precio sin Iva:{{producto.precioSin}}</p>
-                <p>Iva:{{producto.iva}}</p>
-                <p>Precio con Iva:{{producto.precioCon}}</p>
-                <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                    data-bs-target="modalEditar">Edita</button> -->
-                <!-- MODAL NO ENLAZADA -->
-                <a class="btn btn.dark" routerLink="/productos/{{producto.id}}">Editar</a>
-                <button type="button" class="btn btn-dark">Sumar c</button>
-                <button type="button" class="btn btn-dark">Restar c</button>
-            </div>
-        </div>
-        <button type="button" class="btn btn-outline-secondary"> AÑADIR NUEVO PRODUCTO <i
-                class="fas fa-plus-square"></i></button>
-    </div>
 </div>
 
 <!-- tabla -->
-<div class="container" *ngIf="!mostrar">
+<div class="container">
     <table class="table table-secondary table-striped">
         <thead>
             <tr>
@@ -55,8 +28,45 @@
                 <td>{{producto.precioSin}}</td>
                 <td>{{producto.iva}}</td>
                 <td>{{producto.precioCon}}</td>
-                <td> <button type="button" class="btn btn-dark"></button></td>
+                <td> <button type="button" class="btn btn-dark" [attr.data-bs-target]="'#editModal'+producto.id"
+                        data-bs-toggle="modal">Editar</button>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<!-- modal -->
+<div *ngFor="let producto of arrProductos" class="modal fade" [id]="'editModal'+producto.id" tabindex="-1"
+    aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- formu -->
+            <form [formGroup]="formularioEdit" (ngSubmit)="onEdit()">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div><label for="">Nombre</label><input type="text" [value]="producto.nombre"
+                            formControlName="nombre" [placeholder]="producto.nombre"></div>
+                    <div><label for="">Formato</label><input type=" text" [value]="producto.formato"
+                            formControlName="formato" [placeholder]="producto.formato"></div>
+                    <div><label for="">Cantidad</label><input type="text" [value]="producto.cantidad"
+                            formControlName="cantidad" [placeholder]="producto.cantidad"></div>
+                    <div><label for="">Precio sin iva</label><input type="text" [value]="producto.precioSin"
+                            formControlName="precioSin" [placeholder]="producto.precioSin"></div>
+                    <div><label for="">Iva</label><input type="text" [value]="producto.Iva" formControlName="iva"
+                            [placeholder]="producto.iva"></div>
+                    <div><label for="">Precio con iva</label><input type="text" [value]="producto.precioCon"
+                            formControlName="precioCon" [placeholder]="producto.precioCon"></div>
+                </div>
+                <div class=" modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+<!-- fin modal -->

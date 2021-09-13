@@ -10,6 +10,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
 import { FormsModule } from '@angular/forms';
+import { FormCreacionProductosComponent } from './form-creacion-productos/form-creacion-productos.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     SignInComponent,
     SignUpComponent,
     LandingComponent,
-    ProductosComponent
+    ProductosComponent,
+    FormCreacionProductosComponent
   ],
   imports: [
     BrowserModule,

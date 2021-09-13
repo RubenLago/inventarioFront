@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../services/posts.service';
+import { postsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-productos',
@@ -13,7 +13,7 @@ export class ProductosComponent implements OnInit {
 
 
 
-  constructor(private postsService: PostsService) {
+  constructor(private postsService: postsService) {
     this.arrProductos = [];
     this.mostrar = true;
 

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Producto } from '../services/posts.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { postsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-form-product',
@@ -11,7 +12,9 @@ export class FormProductComponent implements OnInit {
 
   @Input() producto: Producto | undefined;
   formularioEdit: FormGroup;
-  constructor() {
+  constructor(
+    private postsService: postsService
+  ) {
     this.formularioEdit = new FormGroup({
       nombre: new FormControl('', [
         Validators.required
@@ -44,15 +47,16 @@ export class FormProductComponent implements OnInit {
       }
       )
     }
-  }
-
-
-  /* editar un artículo */
-  onEdit() {
-    console.log(this.formularioEdit.value)
-
-
 
   }
+
+  async onEdit() {
+    const updateProduct = this.formularioEdit.value;
+    updateProduct.id = this.producto!.id;
+    const editProduct = await this.postsService.editProduct(
+      updateProduct)
+
+  }
+
 
 }

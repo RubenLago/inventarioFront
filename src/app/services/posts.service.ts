@@ -52,7 +52,10 @@ export class postsService {
   }
 
 
+  deleteProduct(formsValue: Producto): Promise<any> {
+    return this.httpClient.delete(`${this.baseUrl}/productos/${formsValue.id}`).toPromise()
+
+  }
 
 }
-
 

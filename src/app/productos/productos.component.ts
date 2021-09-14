@@ -19,6 +19,7 @@ export class ProductosComponent implements OnInit {
     this.arrProductos = [];
     this.mostrar = true;
     this.formulario = new FormGroup({
+      id: new FormControl('', []),
       nombre: new FormControl('', [Validators.required]),
       formato: new FormControl('', []),
       categoria: new FormControl('', []),
@@ -48,7 +49,11 @@ export class ProductosComponent implements OnInit {
     }
   }
 
+  async OnClickDelete() {
+    const deleteProducto = await this.postsService.deleteProduct(this.formulario.value.id)
+    console.log(deleteProducto)
 
+  }
 
 }
 

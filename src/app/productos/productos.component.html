@@ -84,7 +84,7 @@
                         <td>{{producto.precioCon}}</td>
                         <td> <button type="button" class="btn btn-dark" data-bs-toggle="modal"
                                 [attr.data-bs-target]="'#editModal'+producto.id">Editar</button></td>
-                        <td> <button type="button" class="btn btn-dark">Borrar</button></td>
+                        <td> <button type="button" class="btn btn-dark" onclick="OnClickDelete()">Borrar</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -94,7 +94,7 @@
 </div>
 
 <!-- modal -->
-<div *ngFor="let producto of arrProductos" class="modal fade" [id]="'editModal'+producto.id" tabindex="-1"
+<div *ngFor=" let producto of arrProductos" class="modal fade" [id]="'editModal'+producto.id" tabindex="-1"
     aria-labelledby="editModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

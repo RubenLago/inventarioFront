@@ -57,5 +57,5 @@ export class FormProductComponent implements OnInit {
       updateProduct)
   }
 
-
 }
+

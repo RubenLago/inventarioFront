@@ -82,5 +82,12 @@ footer{
 
 #crearcuenta a:hover{
     color: var(--colorprincipal);
+}
 
+#imgLateral{
+    background-size: cover;
+    opacity: 0.8;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
 }

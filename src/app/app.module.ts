@@ -11,6 +11,8 @@ import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
 import { FormsModule } from '@angular/forms';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { FormProductComponent } from './form-product/form-product.component';
 
 @NgModule({
@@ -22,6 +24,8 @@ import { FormProductComponent } from './form-product/form-product.component';
     ProductosComponent,
     UsuariosComponent,
     FormProductComponent,
+    CabeceraComponent,
+    FooterComponent,
 
   ],
   imports: [

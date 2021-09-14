@@ -1,52 +1,67 @@
 <app-cabecera></app-cabecera>
 
-<body>
-    <main>
-        <h1>BIENVENIDO 👋 </h1>
-        <div class="container col-md-7 col-lg-8" id="container">
-            <form class="needs-validation" (ngSubmit)="onSubmit()">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <div id="opcion">
-                    <p>O</p>
-                </div>
-                <hr>
-                <h4 class="mb-3">Datos de registro:</h4>
-                <div class="row g-3">
-                    <div class="col-12">
-                        <label class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" formControlName="nombre">
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label">Apellidos:</label>
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control" formControlName="apellidos">
-                        </div>
-                    </div>
-                    <div class=" col-12">
-                        <label class="form-label">Email:</label>
-                        <input type="email" class="form-control" placeholder="somos@unoscracks.com"
-                            formControlName="correo">
-                    </div>
-                    <div class="col-12">
-                        <label fo class="form-label">Contraseña:</label>
-                        <input type="password" class="form-control" formControlName="role">
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label">Repetir contraseña</label>:
-                        <input type="password" class="form-control" formControlName="repeat_password">
-                    </div>
-                </div>
-                <button id="button-register" class="btn btn-primary" type="submit">Registrarse</button>
-                <div id="iniciarsesion">
-                    <p>¿Ya tienes una cuenta?</p>
-                    <a id="registrate" href="/login">
-                        ¡Inicia sesión
-                    </a>
-                </div>
-            </form>
+<div class="container">
+    <div class="row">
+        <div class="col-6 ">
+            <img class="img-fluid" src="../../assets/img_08.jpg" alt="">
         </div>
-    </main>
-</body>
+        <div class="col-6">
+            <div class="text-center">
+                <div class="form-signin">
+                    <div>
+                        <h1>BIENVENIDO 👋 </h1>
+                    </div>
+                    <div class="g-signin2" data-onsuccess="onSignIn">
+                        <form class=" needs-validation" (ngSubmit)="onSubmit()">
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                            <div id="opcion">
+                                <p>O</p>
+                            </div>
+                            <hr>
+                            <h4 class="mb-3">Datos de registro:</h4>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Nombre:</label>
+                                    <input type="text" class="form-control" formControlName="nombre">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Apellidos:</label>
+                                    <div class="input-group has-validation">
+                                        <input type="text" class="form-control" formControlName="apellidos">
+                                    </div>
+                                </div>
+                                <div class=" col-12">
+                                    <label class="form-label">Email:</label>
+                                    <input type="email" class="form-control" placeholder="somos@unoscracks.com"
+                                        formControlName="correo">
+                                </div>
+                                <div class="col-12">
+                                    <label fo class="form-label">Contraseña:</label>
+                                    <input type="password" class="form-control" formControlName="role">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Repetir contraseña</label>:
+                                    <input type="password" class="form-control" formControlName="repeat_password">
+                                </div>
+                            </div>
+                            <button id="button-register" class="btn btn-primary" type="submit">Registrarse</button>
+                            <div id="iniciarsesion">
+                                <p>¿Ya tienes una cuenta?</p>
+                                <a id="registrate" href="/login">
+                                    ¡Inicia sesión
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 <app-footer>
 
 </app-footer>

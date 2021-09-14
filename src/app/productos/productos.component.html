@@ -10,6 +10,9 @@
 <div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <app-form-product (formOut)='cerrarForm($event)'> </app-form-product>
+
+            <!-- 
             <div class="modal-header">
                 <h5 class="modal-title" id="addproduct">Añadir nuevo producto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -50,7 +53,7 @@
                     <button type="button" class="btn btn-primary" type="submit" data-bs-dismiss="modal"
                         aria-label="Close">Guardar Cambios</button>
                 </form>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -86,7 +89,9 @@
                         <td>{{producto.precioCon}}</td>
                         <td> <button type="button" class="btn btn-dark" data-bs-toggle="modal"
                                 [attr.data-bs-target]="'#editModal'+producto.id">Editar</button></td>
-                        <td> <button type="button" class="btn btn-dark" onclick="OnClickDelete()">Borrar</button></td>
+                        <td> <button type="button" class="btn btn-dark"
+                                (click)="OnClickDelete(producto.id)">Borrar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -101,7 +106,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- formu -->
-            <app-form-product [producto]="producto"></app-form-product>
+            <app-form-product (formOut)='cerrarForm($event)' [producto]="producto"></app-form-product>
         </div>
     </div>
 </div>

@@ -49,14 +49,22 @@ export class ProductosComponent implements OnInit {
     }
   }
 
-  async OnClickDelete() {
-    const deleteProducto = await this.postsService.deleteProduct(this.formulario.value.id)
-    console.log(deleteProducto)
+  async OnClickDelete(pId: number) {
+    const deleteProducto = await this.postsService.deleteProduct(pId)
+    if (deleteProducto) {
+      this.postsService.getAll()
+        .then(posts => this.arrProductos = posts)
+        .catch(error => console.log(error))
 
+    }
   }
 
+  cerrarForm($event: any) {
+    this.postsService.getAll()
+      .then(posts => this.arrProductos = posts)
+      .catch(error => console.log(error))
+  }
 }
-
 
 
 

@@ -1,35 +1,47 @@
 <app-cabecera></app-cabecera>
 
-<body class="text-center">
-    <main class="form-signin">
-        <form (ngSubmit)="onSubmit()">
-            <h1>Login</h1>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <div>
-                <p>O</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="text-center">
+                <div class="form-signin">
+                    <form (ngSubmit)="onSubmit()">
+                        <h1>Login</h1>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <div>
+                            <p>O</p>
+                        </div>
+                        <hr>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" placeholder="name@example.com"
+                                formControlName="correo">
+                            <label for="floatingInput">Correo</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" placeholder="Password"
+                                formControlName="password">
+                            <label for=" floatingPassword">Contraseña </label>
+                        </div>
+                        <div class="checkbox mb-3">
+                            <label id="recordatorio">
+                                <input type="checkbox" value="remember-me"> Recordar Usuario
+                            </label>
+                        </div>
+                        <button id="signin" type="submit">Sign in</button>
+                    </form>
+                    <div id="crearcuenta">
+                        <p>¿Has olvidado tu contraseña?</p>
+                        <p>¿Aún no tienes cuenta? <a id="registrate" href="/registro"> ¡Registrate! </a></p>
+                    </div>
+                </div>
             </div>
-            <hr>
-            <div class="form-floating">
-                <input type="text" class="form-control" placeholder="name@example.com" formControlName="correo">
-                <label for="floatingInput">Correo</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" placeholder="Password" formControlName="password">
-                <label for=" floatingPassword">Contraseña </label>
-            </div>
-            <div class="checkbox mb-3">
-                <label id="recordatorio">
-                    <input type="checkbox" value="remember-me"> Recordar Usuario
-                </label>
-            </div>
-            <button id="signin" type="submit">Sign in</button>
-        </form>
-        <div id="crearcuenta">
-            <p>¿Has olvidado tu contraseña?</p>
-            <p>¿Aún no tienes cuenta? <a id="registrate" href="/registro"> ¡Registrate! </a></p>
         </div>
-    </main>
-</body>
+        <div class="col-6 ">
+            <img class="img-fluid" src="../../assets/img_08.jpg" alt="">
+        </div>
+    </div>
+</div>
+
 
 
 <app-footer></app-footer>

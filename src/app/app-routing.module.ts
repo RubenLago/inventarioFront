@@ -4,6 +4,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
+import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 /* import { Usuarios } from './models/usuario.model'; */
 
 const routes: Routes = [
@@ -14,7 +15,10 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: 'productos/:id', component: ProductosComponent },
   /*  { path: 'listaUsuario', component: Usuarios }, */
+  { path: 'report', component: VistaUsuarioComponent },
+  //ruta ** mantener en última posicion
   { path: '**', redirectTo: 'home' },
+
 ];
 
 @NgModule({

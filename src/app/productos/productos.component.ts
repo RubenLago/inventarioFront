@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { postsService } from '../services/posts.service';
+import { postsService } from '../services/products.service';
 
 @Component({
   selector: 'app-productos',

@@ -1,8 +1,9 @@
 export interface Usuarios {
-    nombre: string
+    nombre: string,
+    apellidos: string,
     email: string,
+    username: string,
     password: string,
-    imagen: string,
     telefono: number
 
 }

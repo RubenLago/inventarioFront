@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Producto } from '../models/producto.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { postsService } from '../services/posts.service';
+import { postsService } from '../services/products.service';
 
 @Component({
   selector: 'app-form-product',

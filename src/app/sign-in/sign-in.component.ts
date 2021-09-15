@@ -15,7 +15,7 @@ export class SignInComponent implements OnInit {
     private userService: UsersService
   ) {
     this.formulario = new FormGroup({
-      correo: new FormControl(),
+      email: new FormControl(),
       password: new FormControl(),
     })
   }
@@ -26,7 +26,14 @@ export class SignInComponent implements OnInit {
 
   async onSubmit() {
     const response = await this.userService.login(this.formulario.value);
-    console.log(this.formulario.value)
+    console.log(response)
+    if (response.error) {
+      alert(response.error);
+    } else {
+      localStorage.setItem('token', response.token);
+      alert(response.success)
+    }
+
   }
 
 }

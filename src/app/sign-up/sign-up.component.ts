@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../services/users.service';
 
 @Component({
@@ -17,7 +17,9 @@ export class SignUpComponent implements OnInit {
     this.formulario = new FormGroup({
       nombre: new FormControl(),
       apellidos: new FormControl(),
-      correo: new FormControl(),
+      correo: new FormControl('', [
+        Validators.pattern(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)
+      ]),
       password: new FormControl(),
       repeat_password: new FormControl(),
 

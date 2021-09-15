@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { login } from '../models/login.models';
 import { Usuarios } from '../models/usuario.model';
@@ -13,7 +13,7 @@ export class UsersService {
   constructor(
     private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://7fa2-77-231-124-106.ngrok.io'
+    this.baseUrl = 'http://f717-77-231-124-106.ngrok.io'
   }
 
 
@@ -27,5 +27,20 @@ export class UsersService {
     return this.httpClient.post(`${this.baseUrl}/usuarios/login`, formsValue).toPromise()
 
   }
+
+  getNegocios(): Promise<any[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'authorization': localStorage.getItem('token')!
+      })
+    }
+    return this.httpClient.get<any[]>(`${this.baseUrl}/usuarios/negocios`, httpOptions).toPromise()
+
+
+  }
+
+
+
+
 
 }

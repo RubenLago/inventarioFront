@@ -7,4 +7,5 @@ export interface Producto {
     categoria: string,
     iva: string,
     precioCon: string,
+    fk_negocio_id: number,
 }

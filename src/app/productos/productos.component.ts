@@ -13,7 +13,7 @@ export class ProductosComponent implements OnInit {
   arrProductos: any[];
   mostrar: boolean;
   formulario: FormGroup;
-  negocioid: Number;
+  negocioid: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -40,7 +40,6 @@ export class ProductosComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.negocioid = params.idNegocio
-
       this.productsService.getByNegocio(params.idNegocio)
         .then(products => this.arrProductos = products)
         .catch(error => console.log(error))
@@ -60,12 +59,14 @@ export class ProductosComponent implements OnInit {
 
 
   async addProduct() {
+    console.log(this.negocioid);
+
+    this.formulario.value.fk_negocio_id = this.negocioid;
     const newProduct = await this.productsService.newProduct(this.formulario.value)
     if (newProduct) {
-      this.productsService.getAll()
-        .then(posts => this.arrProductos = posts) //console.log(posts)
+      this.productsService.getByNegocio(this.negocioid)
+        .then(products => this.arrProductos = products)
         .catch(error => console.log(error))
-
     }
   }
 
@@ -80,8 +81,8 @@ export class ProductosComponent implements OnInit {
   }
 
   cerrarForm($event: any) {
-    this.productsService.getAll()
-      .then(posts => this.arrProductos = posts)
+    this.productsService.getByNegocio(this.negocioid)
+      .then(products => this.arrProductos = products)
       .catch(error => console.log(error))
   }
 }

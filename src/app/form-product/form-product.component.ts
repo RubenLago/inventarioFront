@@ -14,6 +14,8 @@ export class FormProductComponent implements OnInit {
 
 
   @Input() producto: Producto | undefined;
+  @Input() idNegocio: number | undefined;
+
   formularioEdit: FormGroup;
   title: string = '';
   constructor(
@@ -64,6 +66,7 @@ export class FormProductComponent implements OnInit {
       const editProduct = await this.productsService.editProduct(
         updateProduct)
     } else {
+      this.formularioEdit.value.fk_negocio_id = this.idNegocio;
       const newProduct = await this.productsService.newProduct(this.formularioEdit.value)
     }
     this.formOut.emit('cerrar')

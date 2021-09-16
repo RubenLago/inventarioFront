@@ -1,5 +1,3 @@
-<app-cabecera></app-cabecera>
-
 <div class="row p-4">
     <h5 class="col-10">Productos</h5>
 </div>
@@ -10,7 +8,7 @@
 <div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <app-form-product (formOut)='cerrarForm($event)'> </app-form-product>
+            <app-form-product [idNegocio]="negocioid" (formOut)="cerrarForm($event)"></app-form-product>
 
             <!-- 
             <div class="modal-header">
@@ -65,7 +63,6 @@
             <table class="table table-secondary table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
                         <th scope="col">Producto</th>
                         <th scope="col">Formato</th>
                         <th scope="col">Cantidad</th>
@@ -79,7 +76,6 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let producto of arrProductos">
-                        <th scope="row">{{producto.id}}</th>
                         <td>{{producto.nombre}}</td>
                         <td>{{producto.formato}}</td>
                         <td>{{producto.cantidad}}</td>
@@ -111,6 +107,3 @@
     </div>
 </div>
 <!-- fin modal -->
-
-<!-- footer -->
-<app-footer></app-footer>

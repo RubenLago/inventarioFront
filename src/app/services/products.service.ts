@@ -22,7 +22,7 @@ export class productsService {
   constructor(
     private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://88a8-77-231-124-106.ngrok.io'
+    this.baseUrl = 'http://d3fc-77-231-124-106.ngrok.io'
 
   }
 

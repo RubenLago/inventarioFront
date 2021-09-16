@@ -5,6 +5,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
+import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
 /* import { Usuarios } from './models/usuario.model'; */
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   /*  { path: 'listaUsuario', component: Usuarios }, */
   {
     path: 'report', component: VistaUsuarioComponent, children: [
-      { path: 'negocio/:idNegocio', component: ProductosComponent }
+      { path: 'negocio/create', component: FormNegocioComponent },
+      { path: 'negocio/:idNegocio', component: ProductosComponent },
     ]
   },
 

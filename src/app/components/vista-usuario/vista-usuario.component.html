@@ -19,11 +19,14 @@
                             aria-haspopup="true" aria-expanded="false">
                             Negocios
                         </a>
+
                         <!--  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"></div> -->
                         <a class="dropdown-item" [routerLink]="['/report/negocio', negocio.id]" id=""
                             *ngFor="let negocio of arrNegocios">{{negocio.nombre}} </a>
-
                         <!-- </div> -->
+                    </li>
+                    <li>
+                        <a [routerLink]="['/report/negocio/create']" (click)="onChange()">Añadir NUEVO NEgoCIo</a>
                     </li>
                 </ul>
                 <ul class="nav fex-column">
@@ -41,9 +44,8 @@
         </div>
 
         <div class="col-9">
-            <router-outlet>
+            <router-outlet></router-outlet>
 
-            </router-outlet>
         </div>
 
 

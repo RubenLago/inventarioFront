@@ -20,6 +20,9 @@ export class VistaUsuarioComponent implements OnInit {
   async ngOnInit() {
     const response = await this.userServices.getNegocios();
     this.arrNegocios = response
+  }
+
+  onChange() {
 
   }
 

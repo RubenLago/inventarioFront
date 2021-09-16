@@ -15,7 +15,14 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: 'productos/:id', component: ProductosComponent },
   /*  { path: 'listaUsuario', component: Usuarios }, */
-  { path: 'report', component: VistaUsuarioComponent },
+  {
+    path: 'report', component: VistaUsuarioComponent, children: [
+      { path: 'negocio/:idNegocio', component: ProductosComponent }
+    ]
+  },
+
+
+
   //ruta ** mantener en última posicion
   { path: '**', redirectTo: 'home' },
 

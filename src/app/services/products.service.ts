@@ -15,14 +15,14 @@ export interface producto {
 @Injectable({
   providedIn: 'root'
 })
-export class postsService {
+export class productsService {
 
   baseUrl: string;
 
   constructor(
     private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000'
+    this.baseUrl = 'http://62aa-77-231-124-106.ngrok.io '
 
   }
 
@@ -57,5 +57,12 @@ export class postsService {
 
   }
 
-}
+  //recuperar los productos de cada negocio
+  getByNegocio(pId: number): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}`).toPromise()
+  }
 
+
+
+
+}

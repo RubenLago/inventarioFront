@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Producto } from '../models/producto.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { postsService } from '../services/products.service';
+import { productsService } from '../services/products.service';
 
 @Component({
   selector: 'app-form-product',
@@ -17,7 +17,7 @@ export class FormProductComponent implements OnInit {
   formularioEdit: FormGroup;
   title: string = '';
   constructor(
-    private postsService: postsService
+    private productsService: productsService
 
   ) {
     this.formularioEdit = new FormGroup({
@@ -39,7 +39,6 @@ export class FormProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = (this.producto !== undefined) ? 'Actualizar' : 'Insertar'
-    console.log(this.title, this.producto)
     if (this.producto !== undefined) {
       this.formularioEdit = new FormGroup({
         nombre: new FormControl(this.producto!.nombre, [
@@ -62,10 +61,10 @@ export class FormProductComponent implements OnInit {
     if (this.producto !== undefined) {
       const updateProduct = this.formularioEdit.value;
       updateProduct.id = this.producto!.id;
-      const editProduct = await this.postsService.editProduct(
+      const editProduct = await this.productsService.editProduct(
         updateProduct)
     } else {
-      const newProduct = await this.postsService.newProduct(this.formularioEdit.value)
+      const newProduct = await this.productsService.newProduct(this.formularioEdit.value)
     }
     this.formOut.emit('cerrar')
   }

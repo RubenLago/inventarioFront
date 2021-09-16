@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { postsService } from '../services/products.service';
+import { producto, productsService } from '../services/products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
@@ -12,9 +13,11 @@ export class ProductosComponent implements OnInit {
   arrProductos: any[];
   mostrar: boolean;
   formulario: FormGroup;
+  negocioid: Number;
 
   constructor(
-    private postsService: postsService,
+    private activatedRoute: ActivatedRoute,
+    private productsService: productsService,
     private router: Router) {
     this.arrProductos = [];
     this.mostrar = true;
@@ -29,20 +32,37 @@ export class ProductosComponent implements OnInit {
       precioSin: new FormControl('', []),
     })
 
+    this.negocioid = 0
+
+
   }
 
   ngOnInit(): void {
-    this.postsService.getAll()
+    this.activatedRoute.params.subscribe(params => {
+      this.negocioid = params.idNegocio
+
+      this.productsService.getByNegocio(params.idNegocio)
+        .then(products => this.arrProductos = products)
+        .catch(error => console.log(error))
+    })
+    /* this.postsService.getAll()
       .then(posts => this.arrProductos = posts) //console.log(posts)
-      .catch(error => console.log(error))
+      .catch(error => console.log(error)) */
+
+
+
+
+    //recuperar de la url  
+
+
   }
 
 
 
   async addProduct() {
-    const newProduct = await this.postsService.newProduct(this.formulario.value)
+    const newProduct = await this.productsService.newProduct(this.formulario.value)
     if (newProduct) {
-      this.postsService.getAll()
+      this.productsService.getAll()
         .then(posts => this.arrProductos = posts) //console.log(posts)
         .catch(error => console.log(error))
 
@@ -50,9 +70,9 @@ export class ProductosComponent implements OnInit {
   }
 
   async OnClickDelete(pId: number) {
-    const deleteProducto = await this.postsService.deleteProduct(pId)
+    const deleteProducto = await this.productsService.deleteProduct(pId)
     if (deleteProducto) {
-      this.postsService.getAll()
+      this.productsService.getAll()
         .then(posts => this.arrProductos = posts)
         .catch(error => console.log(error))
 
@@ -60,7 +80,7 @@ export class ProductosComponent implements OnInit {
   }
 
   cerrarForm($event: any) {
-    this.postsService.getAll()
+    this.productsService.getAll()
       .then(posts => this.arrProductos = posts)
       .catch(error => console.log(error))
   }

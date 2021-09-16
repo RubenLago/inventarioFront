@@ -20,7 +20,8 @@
                             Negocios
                         </a>
                         <!--  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"></div> -->
-                        <a class="dropdown-item" id="" *ngFor="let negocio of arrNegocios">{{negocio.nombre}}</a>
+                        <a class="dropdown-item" [routerLink]="['/report/negocio', negocio.id]" id=""
+                            *ngFor="let negocio of arrNegocios">{{negocio.nombre}} </a>
 
                         <!-- </div> -->
                     </li>
@@ -40,28 +41,9 @@
         </div>
 
         <div class="col-6">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam magnam nulla atque rem quibusdam
-                aspernatur nemo architecto tempora adipisci maiores facere hic inventore, necessitatibus distinctio
-                expedita facilis, doloribus in aut quod porro molestias fugit! Sit vitae, cupiditate sed laudantium
-                consequuntur, minus ipsum soluta rerum vero sint neque quasi provident! Culpa aperiam adipisci
-                accusamus, quam eaque labore? Recusandae ab, delectus facere ea cumque, provident obcaecati fuga est
-                doloremque esse optio tenetur soluta porro accusantium? Ducimus alias ut pariatur commodi ab doloremque?
-                Sunt, explicabo. Impedit, provident in deleniti ad rerum suscipit laborum placeat nihil quo magnam
-                perspiciatis dicta minus assumenda facere ea consequatur laboriosam itaque? Quos, alias! Perspiciatis
-                molestias amet voluptate illum rerum dolore nesciunt. Laborum deleniti est ipsam repellendus illum eaque
-                nihil at distinctio assumenda facere eius id, porro, esse animi vitae, totam possimus provident
-                molestiae earum tenetur sapiente voluptas iure! Sed ea optio hic aliquid repudiandae labore dolorum
-                consectetur vero, vel facilis iusto adipisci quibusdam earum cum, fugiat maxime expedita, rem vitae!
-                Eius, cum enim vitae molestiae maiores, facere porro quidem voluptates minima inventore id. Excepturi,
-                aut aperiam molestiae vero fuga ullam incidunt, saepe odit numquam officiis illum repellendus, corrupti
-                eveniet nemo dolorem praesentium natus beatae est quasi. Aliquam illum sunt unde eveniet, maxime quam
-                minima, magni excepturi harum veritatis similique, id voluptas exercitationem velit nulla vero
-                consequuntur non provident consequatur ullam perspiciatis ipsum est doloremque molestiae. Dolorem minus
-                sapiente quis ducimus, excepturi dolor quidem sunt ad sit odit itaque quo exercitationem beatae iure?
-                Qui ab nobis maiores sed, nostrum corrupti sit, culpa pariatur, assumenda nihil quas voluptatibus
-                sapiente omnis numquam? Ad fugit delectus cumque recusandae porro facere similique! Cum sunt et sequi
-                reiciendis delectus ex, ut iusto nemo mollitia a repudiandae cupiditate laborum facilis commodi placeat
-                aut non repellendus, facere magnam expedita. Veritatis deleniti beatae voluptatem? Quo, deleniti a!</p>
+            <router-outlet>
+
+            </router-outlet>
         </div>
 
         <div class="col">

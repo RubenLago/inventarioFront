@@ -16,7 +16,8 @@
                 <ul class="nav fex-column">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                            aria-labelledby="navbarDropdownMenuLink" aria-expanded="true"
+                            aria-labelledby="navbarDropdownMenuLink" aria-expanded="false">
                             Negocios
                         </a>
 
@@ -24,9 +25,8 @@
                         <a class="dropdown-item" [routerLink]="['/report/negocio', negocio.id]" id=""
                             *ngFor="let negocio of arrNegocios">{{negocio.nombre}} </a>
                         <!-- </div> -->
-                    </li>
-                    <li>
-                        <a [routerLink]="['/report/negocio/create']" (click)="onChange()">Añadir NUEVO NEgoCIo</a>
+                        <a class="dropdown-item" [routerLink]="['/report/negocio/create']" (click)="onChange()">Añadir
+                            Negocio</a>
                     </li>
                 </ul>
                 <ul class="nav fex-column">

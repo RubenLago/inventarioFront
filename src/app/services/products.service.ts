@@ -22,11 +22,7 @@ export class productsService {
   constructor(
     private httpClient: HttpClient) {
 
-<<<<<<< HEAD
-    this.baseUrl = 'http://f47f-82-158-13-59.ngrok.io'
-=======
-    this.baseUrl = 'http://edf1-77-231-124-106.ngrok.io'
->>>>>>> a8aa2ab9fbbc057dbc4e557ac73d461279c5e0f3
+    this.baseUrl = 'http://53aa-82-158-13-59.ngrok.io'
 
   }
 
@@ -64,6 +60,12 @@ export class productsService {
   //recuperar los productos de cada negocio
   getByNegocio(pId: number): Promise<any> {
     return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}`).toPromise()
+  }
+
+
+  //autocompletado filtro texto
+  getFiltroTexto(pId: number, pTexto: string): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}/${pTexto}`).toPromise()
   }
 
 

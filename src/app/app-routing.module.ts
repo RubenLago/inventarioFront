@@ -20,6 +20,7 @@ const routes: Routes = [
     path: 'report', component: VistaUsuarioComponent, children: [
       { path: 'negocio/create', component: FormNegocioComponent },
       { path: 'negocio/:idNegocio', component: ProductosComponent },
+      { path: 'negocio/:idNegocio/:filtro', component: ProductosComponent }
     ]
   },
 

@@ -85,6 +85,13 @@ export class ProductosComponent implements OnInit {
       .then(products => this.arrProductos = products)
       .catch(error => console.log(error))
   }
+
+  onInput($event: any) {
+    this.productsService.getFiltroTexto(this.negocioid, $event.target.value)
+      .then(products => this.arrProductos = products)
+      .catch(error => console.log(error))
+
+  }
 }
 
 

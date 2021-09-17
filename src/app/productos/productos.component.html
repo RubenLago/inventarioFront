@@ -3,6 +3,7 @@
 </div>
 <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addproduct"> AÑADIR
     NUEVO PRODUCTO <i class="fas fa-plus-square"></i></button>
+<input type="text" (input)="onInput($event)">
 
 <!-- Modal -->
 <div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,6 +61,7 @@
     <table id="tabla" class="table table-secondary table-striped">
         <!-- tabla -->
         <div class="container">
+
             <table class="table table-secondary table-striped">
                 <thead>
                     <tr>

@@ -13,11 +13,7 @@ export class UsersService {
   constructor(
     private httpClient: HttpClient) {
 
-<<<<<<< HEAD
-    this.baseUrl = 'http://f47f-82-158-13-59.ngrok.io'
-=======
-    this.baseUrl = 'http://edf1-77-231-124-106.ngrok.io'
->>>>>>> a8aa2ab9fbbc057dbc4e557ac73d461279c5e0f3
+    this.baseUrl = 'http://53aa-82-158-13-59.ngrok.io'
   }
 
 
@@ -42,9 +38,5 @@ export class UsersService {
 
 
   }
-
-
-
-
 
 }

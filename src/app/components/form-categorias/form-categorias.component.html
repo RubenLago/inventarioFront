@@ -1,0 +1,16 @@
+<form [formGroup]="formCategoria" (ngSubmit)="onCategoria()">
+    <div>
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre">
+        </div>
+        <div class="form-group">
+            <label for="">Color</label>
+            <input type="color" formControlName="color">
+        </div>
+        <div>
+            <button data-bs-dismiss="modal" aria-label="Close" type="submit" class="btn btn-primary">Añadir
+                categoria</button>
+        </div>
+    </div>
+</form>

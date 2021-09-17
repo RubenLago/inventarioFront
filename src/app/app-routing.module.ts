@@ -6,6 +6,7 @@ import { LandingComponent } from './landing/landing.component';
 import { ProductosComponent } from './productos/productos.component';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
+import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
 /* import { Usuarios } from './models/usuario.model'; */
 
 const routes: Routes = [
@@ -20,11 +21,11 @@ const routes: Routes = [
     path: 'report', component: VistaUsuarioComponent, children: [
       { path: 'negocio/create', component: FormNegocioComponent },
       { path: 'negocio/:idNegocio', component: ProductosComponent },
-      { path: 'negocio/:idNegocio/:filtro', component: ProductosComponent }
+      { path: 'negocio/:idNegocio/:filtro', component: ProductosComponent },
+      { path: 'categorias/create', component: FormCategoriasComponent },
+
     ]
   },
-
-
 
   //ruta ** mantener en última posicion
   { path: '**', redirectTo: 'home' },

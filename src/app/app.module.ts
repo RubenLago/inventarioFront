@@ -16,6 +16,7 @@ import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { FormProductComponent } from './form-product/form-product.component';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
+import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormNegocioComponent } from './components/form-negocio/form-negocio.com
     FooterComponent,
     VistaUsuarioComponent,
     FormNegocioComponent,
+    FormCategoriasComponent,
 
   ],
   imports: [

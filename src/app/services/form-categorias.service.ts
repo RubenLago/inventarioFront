@@ -24,5 +24,9 @@ export class FormCategoriasService {
     return this.httpClient.post(`${this.baseUrl}/categorias/create`, formsValue, httpOptions).toPromise()
 
   }
+  //autocompletado filtro categoria
+  getFiltroTexto(pId: number, pTexto: string): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}/${pTexto}`).toPromise()
+  }
 
 }

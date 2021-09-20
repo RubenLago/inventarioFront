@@ -12,7 +12,7 @@ export class NegocioService {
     private httpClient: HttpClient
   ) {
 
-    this.baseUrl = 'http://94b2-77-231-124-106.ngrok.io'
+    this.baseUrl = 'http://299d-77-231-124-106.ngrok.io'
 
   }
 

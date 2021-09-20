@@ -12,7 +12,7 @@ export class FormCategoriasService {
   constructor(
     private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://299d-77-231-124-106.ngrok.io'
+    this.baseUrl = 'http://a1b6-77-231-124-106.ngrok.io'
   }
 
   nuevaCategoria(formsValue: categorias): Promise<any> {
@@ -25,8 +25,9 @@ export class FormCategoriasService {
 
   }
   //autocompletado filtro categoria
-  getFiltroTexto(pId: number, pTexto: string): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}/${pTexto}`).toPromise()
+  getFiltroTextoC(pTexto: string): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/categorias/search/${pTexto}`).toPromise()
   }
+
 
 }

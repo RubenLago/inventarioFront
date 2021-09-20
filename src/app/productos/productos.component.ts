@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { producto, productsService } from '../services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormCategoriasService } from '../services/form-categorias.service';
+
 
 @Component({
   selector: 'app-productos',
@@ -14,12 +16,15 @@ export class ProductosComponent implements OnInit {
   mostrar: boolean;
   formulario: FormGroup;
   negocioid: number;
+  arrCategorias: any[]
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productsService: productsService,
+    private categoriaService: FormCategoriasService,
     private router: Router) {
     this.arrProductos = [];
+    this.arrCategorias = [];
     this.mostrar = true;
     this.formulario = new FormGroup({
       id: new FormControl('', []),
@@ -93,6 +98,9 @@ export class ProductosComponent implements OnInit {
 
   }
   onCategorias($event: any) {
+    this.categoriaService.getFiltroTextoC($event.target.value)
+      .then(categorias => this.arrCategorias = categorias)
+      .catch(error => console.log(error))
 
   }
 

@@ -121,3 +121,10 @@ body {
 .follow-text {
     color: #9E9E9E
 }
+
+.agrandar:hover
+{
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsersService } from '../services/users.service';
 
 @Component({
@@ -12,28 +13,26 @@ export class SignInComponent implements OnInit {
   formulario: FormGroup
 
   constructor(
-    private userService: UsersService
+    private userService: UsersService,
+    private router: Router
   ) {
     this.formulario = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
     })
   }
-
   ngOnInit(): void {
 
   }
 
   async onSubmit() {
     const response = await this.userService.login(this.formulario.value);
-    console.log(response)
     if (response.error) {
       alert(response.error);
     } else {
       localStorage.setItem('token', response.token);
       alert(response.success)
+      this.router.navigate(['/report'])
     }
-
   }
-
 }

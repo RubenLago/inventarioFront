@@ -11,7 +11,7 @@ export class NegocioService {
   constructor(
     private httpClient: HttpClient
   ) {
-    this.baseUrl = 'http://64e9-77-230-93-15.ngrok.io';
+    this.baseUrl = 'https://a5cd-77-231-124-106.ngrok.io';
   }
 
   nuevoNegocio(formValues: Negocio): Promise<any> {

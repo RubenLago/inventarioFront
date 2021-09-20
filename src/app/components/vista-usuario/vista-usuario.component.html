@@ -9,10 +9,6 @@
 
             <div id="nav-Vertical" class="ml-5 mt-3" bg-dark>
                 <h6>INFORMES</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="producto" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
                 <ul class="nav fex-column">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -22,23 +18,13 @@
                         </a>
 
                         <!--  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"></div> -->
-                        <a class="dropdown-item" [routerLink]="['/report/negocio', negocio.id]" id=""
+                        <a class="dropdown-item" [routerLink]="['/report/negocio', negocio.id]" id="letra"
                             *ngFor="let negocio of arrNegocios">{{negocio.nombre}} </a>
                         <!-- </div> -->
                         <a class="dropdown-item" [routerLink]="['/report/negocio/create']" (click)="onChange()">Añadir
                             Negocio</a>
                         <a class="dropdown-item" [routerLink]="['/report/categorias/create']">Añadir
                             categoria</a>
-                    </li>
-                </ul>
-                <ul class="nav fex-column">
-                    <li class="nav-item">
-                        <a class=nav-link active href="#">Inventarios</a>
-                    </li>
-                </ul>
-                <ul class="nav fex-column">
-                    <li class="nav-item">
-                        <a class=nav-link active href="#">Stock</a>
                     </li>
                 </ul>
             </div>

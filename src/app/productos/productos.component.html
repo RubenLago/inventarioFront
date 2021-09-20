@@ -1,9 +1,22 @@
 <div class="row p-4">
-    <h5 class="col-10">Productos</h5>
+    <h5 class="col-12 border-bottom border-bottom-secondary">Productos</h5>
 </div>
-<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addproduct"> AÑADIR
-    NUEVO PRODUCTO <i class="fas fa-plus-square"></i></button>
-<input type="text" (input)="onInput($event)">
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm btn btn-outline-secondary">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#addproduct">
+                AÑADIR
+                NUEVO PRODUCTO <i class="fas fa-plus-square"></i></button>
+        </div>
+        <div class="col-sm btn btn-outline-secondary">
+            <input type="text" (input)="onInput($event)" placeholder="BUSCAR POR NOMBRE">
+        </div>
+        <div class="col-sm btn btn-outline-secondary">
+            <input type="text" placeholder="BUSCAR POR CATEGORIAS">
+        </div>
+    </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -11,48 +24,7 @@
         <div class="modal-content">
             <app-form-product [idNegocio]="negocioid" (formOut)="cerrarForm($event)"></app-form-product>
 
-            <!-- 
-            <div class="modal-header">
-                <h5 class="modal-title" id="addproduct">Añadir nuevo producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form [formGroup]="formulario" (ngSubmit)="addProduct()">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre del producto: </label>
-                        <input type="text" class="form-control" formControlName="nombre">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formato" class="form-label">Formato: </label>
-                        <input type="text" class="form-control" formControlName="formato">
-                    </div>
-                    <div class="mb-3">
-                        <label for="categoria" class="form-label">Categoria </label>
-                        <select id="disabledSelect" class="form-select">
-                            <option>Bodega</option>
-                            <option>Refrescos</option>
-                            <option>Café</option>
-                            <option>Destilados</option>
-                        </select>
-                    </div>
-                    <div class=" mb-3">
-                        <label for="cantidad" class="form-label">Cantidad: </label>
-                        <input type="text" class="form-control" formControlName="cantidad">
-                    </div>
-                    <div class="mb-3">
-                        <label for="precioSin" class="form-label">Precio sin iva: </label>
-                        <input type="text" class="form-control" formControlName="precioSin">
-                    </div>
-                    <div class="mb-3">
-                        <label for="iva" class="form-label">IVA:</label>
-                        <input type="text" class="form-control" formControlName="iva">
-                    </div>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar
-                        Cambios</button>
-                    <button type="button" class="btn btn-primary" type="submit" data-bs-dismiss="modal"
-                        aria-label="Close">Guardar Cambios</button>
-                </form>
-            </div> -->
+
         </div>
     </div>
 </div>
@@ -72,11 +44,11 @@
                         <th scope="col">Precio sin iva</th>
                         <th scope="col">Iva</th>
                         <th scope="col">Precio con iva</th>
-                        <th colspan="2" scope="col">Editar</th>
+                        <th colspan="2" scope="col"></th>
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id=tbodyLetra>
                     <tr *ngFor="let producto of arrProductos">
                         <td>{{producto.nombre}}</td>
                         <td>{{producto.formato}}</td>

@@ -12,3 +12,7 @@
 	border-color: var(--colorprincipal);
 }
 
+#tbodyLetra td{
+    font-family: var(--fuenteprincipal);
+    font-weight: 100;
+}

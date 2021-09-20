@@ -12,7 +12,7 @@ export class FormCategoriasService {
   constructor(
     private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://64e9-77-230-93-15.ngrok.io';
+    this.baseUrl = 'http://9210-77-231-124-106.ngrok.io'
   }
 
   nuevaCategoria(formsValue: categorias): Promise<any> {

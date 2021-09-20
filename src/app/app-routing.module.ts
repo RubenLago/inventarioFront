@@ -7,6 +7,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
 import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
+import { LoginGuard } from './login.guard';
 /* import { Usuarios } from './models/usuario.model'; */
 
 const routes: Routes = [
@@ -14,11 +15,11 @@ const routes: Routes = [
   { path: 'login', component: SignInComponent },
   { path: 'registro', component: SignUpComponent },
   { path: 'home', component: LandingComponent },
-  { path: 'productos', component: ProductosComponent },
-  { path: 'productos/:id', component: ProductosComponent },
+  { path: 'productos', component: ProductosComponent, canActivate: [LoginGuard] },
+  { path: 'productos/:id', component: ProductosComponent, canActivate: [LoginGuard] },
   /*  { path: 'listaUsuario', component: Usuarios }, */
   {
-    path: 'report', component: VistaUsuarioComponent, children: [
+    path: 'report', component: VistaUsuarioComponent, canActivate: [LoginGuard], children: [
       { path: 'negocio/create', component: FormNegocioComponent },
       { path: 'negocio/:idNegocio', component: ProductosComponent },
       { path: 'categorias/create', component: FormCategoriasComponent },

@@ -31,7 +31,6 @@ export class SignInComponent implements OnInit {
       alert(response.error);
     } else {
       localStorage.setItem('token', response.token);
-      alert(response.success)
       this.router.navigate(['/report'])
     }
   }

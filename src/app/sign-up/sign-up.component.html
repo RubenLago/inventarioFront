@@ -2,22 +2,17 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-6 ">
+        <div class="col-xl-6 d-none d-xl-block">
             <img class="img-fluid" src="../../assets/img_08.jpg" alt="">
         </div>
-        <div class="col-6">
+        <div class="col-xl-6 col-12" id="contenedorFormulario">
             <div class="text-center">
                 <div class="form-signin">
                     <div>
-                        <h1>BIENVENIDO 👋 </h1>
+                        <h3>BIENVENIDO</h3>
                     </div>
                     <form class=" needs-validation" [formGroup]="formulario" (ngSubmit)="onSubmit()">
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                        <div id="opcion">
-                            <p>O</p>
-                        </div>
-                        <hr>
-                        <h4 class="mb-3">Datos de registro:</h4>
+                        <h5 class="mb-3">Datos de registro:</h5>
                         <div class="row g-3">
                             <div class="col-12">
                                 <label class="form-label">Nombre:</label>
@@ -50,8 +45,7 @@
                             </div>
                             <div class=" col-12">
                                 <label class="form-label">Email:</label>
-                                <input type="email" class="form-control" placeholder="somos@unoscracks.com"
-                                    formControlName="email">
+                                <input type="email" class="form-control" formControlName="email">
                                 <p class="error" *ngIf="checkControl('email', 'required')">
                                     El campo 'email' es obligatorio
                                 </p>

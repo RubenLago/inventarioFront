@@ -92,6 +92,10 @@ export class ProductosComponent implements OnInit {
       .catch(error => console.log(error))
 
   }
+  onCategorias($event: any) {
+
+  }
+
 }
 
 

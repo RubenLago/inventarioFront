@@ -1,9 +1,14 @@
+
+
 .logo{
     max-width: 100px;
 }
 .menu{
     border-bottom: 3px solid #fd79a8;
     background-color: #2d3436;   
+}
+h2.bordes{
+    border: 2px solid #fd79a8;
 }
 
 /* imagen cabecera */
@@ -35,22 +40,7 @@
        color:white;
        position: relative;
     }
-    .contenedor h2 span{
-        position: absolute;
-        right: 0;
-        width: 0;
-        border-left: 1px solid #999999;
-        background-color: gray;
-        animation: maquina 5s infinite alternate steps(34);
-    }
-    @keyframes maquina{
-        from {
-            width:  100%;
-        }
-        to{
-            width: 0;
-        }
-    }
+    
 
 /* imagenes nosotros */
 #nosotros img{
@@ -130,4 +120,11 @@ body {
 
 .follow-text {
     color: #9E9E9E
+}
+
+.agrandar:hover
+{
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
 }

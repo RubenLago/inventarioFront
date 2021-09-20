@@ -2,16 +2,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-xl-6 col-12">
             <div class="text-center">
                 <div class="form-signin">
                     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-                        <h1>Login</h1>
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                        <div>
-                            <p>O</p>
-                        </div>
-                        <hr>
+                        <h3>Login</h3>
                         <div class="form-floating">
                             <input type="text" class="form-control" placeholder="name@example.com"
                                 formControlName="email">
@@ -36,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 ">
+        <div class="col-xl-6 d-none d-xl-block">
             <img class="img-fluid" src="../../assets/img_08.jpg" alt="">
         </div>
     </div>

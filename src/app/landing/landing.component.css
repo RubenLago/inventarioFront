@@ -1,19 +1,17 @@
-
-
 .logo{
     max-width: 100px;
 }
 .menu{
-    border-bottom: 3px solid #fd79a8;
-    background-color: #2d3436;   
+    border-bottom: 3px solid var(--colorsecundario);
+    background-color: var(--colorprincipal);   
 }
 h2.bordes{
-    border: 2px solid #fd79a8;
+    border: 2px solid var(--colorprincipal);
 }
 
 /* imagen cabecera */
 #imgfondo{
-    background-color: #999999;
+    background-color: var(--colorsecundario);
     background-size: cover;
     opacity: 0.8;
     height: 700px;
@@ -23,23 +21,41 @@ h2.bordes{
     flex-direction: column;
 }
 /* texto cabecera*/
-    .titulo{
+.titulo{
        font-size: 42px;
-       color: white;
+       color: black;
     }
-    .titulo h1{
+
+.titulo h1{
        font-size: 80px;
     }
-    .contenedor{
+
+.contenedor{
         margin: auto;
         display: table;
     }
-    .contenedor h2{
-        font-size: 20px;
-       float: left;
-       color:white;
-       position: relative;
+.contenedor h2{
+   position: relative; 
+	float: left;
+	background: var(--colorsecundario);
+	color: black;
+	font-size: 30px;
+    font-weight: 500;
     }
+
+.contenedor h2 span {
+    position:absolute;
+    right:0;
+    width:0;
+    background: var(--colorsecundario);
+    border-left: 1px solid #000;
+    animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
     
 
 /* imagenes nosotros */

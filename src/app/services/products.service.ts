@@ -21,7 +21,13 @@ export class productsService {
 
   constructor(
     private httpClient: HttpClient) {
+<<<<<<< HEAD
     this.baseUrl = 'https://a5cd-77-231-124-106.ngrok.io';
+=======
+
+    this.baseUrl = 'http://91f4-77-231-124-106.ngrok.io';
+
+>>>>>>> categorias_17_09
   }
 
 

@@ -21,20 +21,11 @@ export class productsService {
 
   constructor(
     private httpClient: HttpClient) {
-<<<<<<< HEAD
-    this.baseUrl = 'http://3a55-77-231-124-106.ngrok.io';
-=======
 
 
-<<<<<<< HEAD
-    this.baseUrl = 'http://a1b6-77-231-124-106.ngrok.io'
-=======
-    this.baseUrl = 'http://4e28-77-231-124-106.ngrok.io'
->>>>>>> filtrado_categorias
+    this.baseUrl = 'http://localhost:3000';
 
->>>>>>> 8bd425d6af6df35f7b81cf1857715cdcff63a0b4
   }
-
 
   getAll(): Promise<any[]> {
     return this.httpClient.get<any>(this.baseUrl + '/productos').toPromise();
@@ -43,7 +34,7 @@ export class productsService {
   /* updateProducto(producto): Promise<[]> {
     return this.httpClient.post<any>(this.baseUrl + '')
   }
-  */
+ */
 
   editProduct(formValues: Producto): Promise<any> {
     return this.httpClient.put(this.baseUrl + '/productos', formValues).toPromise()
@@ -77,6 +68,8 @@ export class productsService {
   getFiltroTexto(pId: number, pTexto: string): Promise<any> {
     return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}/${pTexto}`).toPromise()
   }
+
+
 
 
 

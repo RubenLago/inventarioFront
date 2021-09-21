@@ -11,17 +11,9 @@ export class NegocioService {
   constructor(
     private httpClient: HttpClient
   ) {
-<<<<<<< HEAD
-    this.baseUrl = 'http://3a55-77-231-124-106.ngrok.io';
-=======
 
-<<<<<<< HEAD
-    this.baseUrl = 'http://a1b6-77-231-124-106.ngrok.io'
-=======
-    this.baseUrl = 'http://4e28-77-231-124-106.ngrok.io'
->>>>>>> filtrado_categorias
+    this.baseUrl = 'http://localhost:3000';
 
->>>>>>> 8bd425d6af6df35f7b81cf1857715cdcff63a0b4
   }
 
   nuevoNegocio(formValues: Negocio): Promise<any> {
@@ -31,6 +23,11 @@ export class NegocioService {
       })
     }
     return this.httpClient.post<any[]>(`${this.baseUrl}/negocios/create`, formValues, httpOptions).toPromise()
+
+
+
+
+
   }
 
 

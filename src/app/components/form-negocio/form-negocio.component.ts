@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NegocioService } from 'src/app/services/negocio.service';
 
+
 @Component({
   selector: 'app-form-negocio',
   templateUrl: './form-negocio.component.html',

@@ -10,7 +10,8 @@
             </select>
         </div>
         <div>
-            <button data-bs-dismiss="modal" aria-label="Close" type="submit" class="btn btn-primary">Añadir
+            <button data-bs-dismiss="modal" aria-label="Close" type="submit" class="btn btn-primary"
+                [disabled]="!formCategoria.valid">Añadir
                 categoria</button>
         </div>
     </div>

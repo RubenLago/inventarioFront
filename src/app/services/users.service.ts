@@ -13,7 +13,13 @@ export class UsersService {
   constructor(
     private httpClient: HttpClient) {
 
+<<<<<<< HEAD
     this.baseUrl = 'http://localhost:3000';
+=======
+
+    this.baseUrl = 'http://localhost:3000';
+
+>>>>>>> 6a41dd766b7ad87dc053744e75c32f3b76cc0f2c
   }
 
 

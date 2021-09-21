@@ -22,9 +22,14 @@ export class productsService {
   constructor(
     private httpClient: HttpClient) {
 
+<<<<<<< HEAD
     this.baseUrl = 'http://localhost:3000';
-  }
+=======
 
+    this.baseUrl = 'http://localhost:3000';
+
+>>>>>>> 6a41dd766b7ad87dc053744e75c32f3b76cc0f2c
+  }
 
   getAll(): Promise<any[]> {
     return this.httpClient.get<any>(this.baseUrl + '/productos').toPromise();
@@ -33,7 +38,7 @@ export class productsService {
   /* updateProducto(producto): Promise<[]> {
     return this.httpClient.post<any>(this.baseUrl + '')
   }
-  */
+ */
 
   editProduct(formValues: Producto): Promise<any> {
     return this.httpClient.put(this.baseUrl + '/productos', formValues).toPromise()
@@ -67,6 +72,8 @@ export class productsService {
   getFiltroTexto(pId: number, pTexto: string): Promise<any> {
     return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}/${pTexto}`).toPromise()
   }
+
+
 
 
 

@@ -13,6 +13,9 @@ export class UsersService {
   constructor(
     private httpClient: HttpClient) {
 
+<<<<<<< HEAD
+    this.baseUrl = 'http://3a55-77-231-124-106.ngrok.io';
+=======
 
 <<<<<<< HEAD
     this.baseUrl = 'http://a1b6-77-231-124-106.ngrok.io'
@@ -20,6 +23,7 @@ export class UsersService {
     this.baseUrl = 'http://4e28-77-231-124-106.ngrok.io'
 >>>>>>> filtrado_categorias
 
+>>>>>>> 8bd425d6af6df35f7b81cf1857715cdcff63a0b4
   }
 
 

@@ -28,10 +28,8 @@ export class SignInComponent implements OnInit {
   async onSubmit() {
     const response = await this.userService.login(this.formulario.value);
     if (response.error) {
-      alert(response.error);
     } else {
       localStorage.setItem('token', response.token);
-      alert(response.success)
       this.router.navigate(['/report'])
     }
   }

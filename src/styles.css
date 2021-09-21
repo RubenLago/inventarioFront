@@ -23,8 +23,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 :root {
---colorprincipal: #2d3436;
---colorsecundario: #fd79a8;
+--colorprincipal: black;
+--colorsecundario: white;
 --fuenteprincipal: 'Hind Siliguri', sans-serif;
 }
 

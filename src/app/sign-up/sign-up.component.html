@@ -40,7 +40,15 @@
                                     <p class="error" *ngIf="checkControl('username', 'required')">
                                         El campo 'Nombre del negocio' es obligatorio'
                                     </p>
-
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Telefono:</label>
+                                <div class="input-group has-validation">
+                                    <input type="text" class="form-control" formControlName="apellidos">
+                                    <p class="error" *ngIf="checkControl('apellidos', 'required')">
+                                        El campo 'Telefono' es obligatorio
+                                    </p>
                                 </div>
                             </div>
                             <div class=" col-12">

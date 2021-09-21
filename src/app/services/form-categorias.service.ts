@@ -12,21 +12,25 @@ export class FormCategoriasService {
   constructor(
     private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://299d-77-231-124-106.ngrok.io'
+    this.baseUrl = 'http://4e28-77-231-124-106.ngrok.io'
   }
 
-  nuevaCategoria(formsValue: categorias): Promise<any> {
+  nuevaCategoria(formsValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'authorization': localStorage.getItem('token')!
       })
     }
-    return this.httpClient.post(`${this.baseUrl}/categorias/create`, formsValue, httpOptions).toPromise()
+    return this.httpClient.post(`${this.baseUrl}/categorias/create/${formsValue.idNegocio}`, formsValue, httpOptions).toPromise()
 
   }
   //autocompletado filtro categoria
-  getFiltroTexto(pId: number, pTexto: string): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}/${pTexto}`).toPromise()
+  getFiltroCategoria(pTexto: string): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/categorias/search/${pTexto}`).toPromise()
+  }
+
+  getByCategoria(pId: any): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/categorias/filter/${pId}`).toPromise()
   }
 
 }

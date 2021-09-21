@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { FormCategoriasService } from 'src/app/services/form-categorias.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-form-categorias',
@@ -10,17 +11,22 @@ import { FormCategoriasService } from 'src/app/services/form-categorias.service'
 export class FormCategoriasComponent implements OnInit {
 
   formCategoria: FormGroup
+  arrNegocios: any[]
 
   constructor(
-    private categoriaService: FormCategoriasService
+    private categoriaService: FormCategoriasService,
+    private userServices: UsersService
   ) {
-    this.formCategoria = new FormGroup({
-      nombre: new FormControl('', []),
-      color: new FormControl('', [])
-    })
+    this.arrNegocios = [],
+      this.formCategoria = new FormGroup({
+        nombre: new FormControl('', []),
+        idNegocio: new FormControl('', [])
+      })
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const response = await this.userServices.getNegocios();
+    this.arrNegocios = response
   }
 
 

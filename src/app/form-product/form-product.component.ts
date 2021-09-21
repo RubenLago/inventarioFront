@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Producto } from '../models/producto.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { productsService } from '../services/products.service';
+import { FormCategoriasService } from '../services/form-categorias.service';
 
 @Component({
   selector: 'app-form-product',
@@ -9,6 +10,8 @@ import { productsService } from '../services/products.service';
   styleUrls: ['./form-product.component.css']
 })
 export class FormProductComponent implements OnInit {
+
+  arrCategoria: any[]
 
   @Output() formOut: EventEmitter<any> = new EventEmitter();
 
@@ -19,15 +22,20 @@ export class FormProductComponent implements OnInit {
   formularioEdit: FormGroup;
   title: string = '';
   constructor(
+    private categoriaService: FormCategoriasService,
     private productsService: productsService
 
   ) {
+    this.arrCategoria = []
     this.formularioEdit = new FormGroup({
       nombre: new FormControl('', [
         Validators.required
       ]),
       formato: new FormControl(''),
       cantidad: new FormControl('', [
+        Validators.required
+      ]),
+      fk_categoria_id: new FormControl('', [
         Validators.required
       ]),
       precioSin: new FormControl(''),
@@ -38,8 +46,15 @@ export class FormProductComponent implements OnInit {
   }
 
 
+  async ngOnChanges(changes: SimpleChanges) {
+    if (changes['idNegocio']) {
+      const response = await this.categoriaService.getByCategoria(changes['idNegocio'].currentValue)
+      this.arrCategoria = response
+    }
+  }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<any> {
+
     this.title = (this.producto !== undefined) ? 'Actualizar' : 'Insertar'
     if (this.producto !== undefined) {
       this.formularioEdit = new FormGroup({
@@ -50,13 +65,13 @@ export class FormProductComponent implements OnInit {
         cantidad: new FormControl(this.producto!.cantidad, [
           Validators.required
         ]),
+        fk_categoria_id: new FormControl('', [
+          Validators.required
+        ]),
         precioSin: new FormControl(this.producto!.precioSin),
-        iva: new FormControl(this.producto!.iva),
-
-      }
-      )
+        iva: new FormControl(this.producto!.iva)
+      })
     }
-
   }
 
   async onSubmit() {
@@ -72,5 +87,4 @@ export class FormProductComponent implements OnInit {
     this.formOut.emit('cerrar')
   }
 }
-
 

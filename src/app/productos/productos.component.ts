@@ -5,7 +5,6 @@ import { producto, productsService } from '../services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormCategoriasService } from '../services/form-categorias.service';
 
-
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -13,15 +12,15 @@ import { FormCategoriasService } from '../services/form-categorias.service';
 })
 export class ProductosComponent implements OnInit {
   arrProductos: any[];
+  arrCategorias: any[];
   mostrar: boolean;
   formulario: FormGroup;
   negocioid: number;
-  arrCategorias: any[]
 
   constructor(
+    private categoriaService: FormCategoriasService,
     private activatedRoute: ActivatedRoute,
     private productsService: productsService,
-    private categoriaService: FormCategoriasService,
     private router: Router) {
     this.arrProductos = [];
     this.arrCategorias = [];
@@ -97,12 +96,15 @@ export class ProductosComponent implements OnInit {
       .catch(error => console.log(error))
 
   }
-  onCategorias($event: any) {
+  /* onCategorias($event: any) {
     this.categoriaService.getFiltroTextoC($event.target.value)
       .then(categorias => this.arrCategorias = categorias)
       .catch(error => console.log(error))
 
-  }
+    this.categoriaService.getFiltroCategoria($event.target.value)
+      .then(categorias => this.arrCategorias = categorias)
+      .catch(error => console.log(error))
+  } */
 
 }
 

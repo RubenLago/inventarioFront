@@ -23,7 +23,11 @@ export class productsService {
     private httpClient: HttpClient) {
 
 
+<<<<<<< HEAD
     this.baseUrl = 'http://a1b6-77-231-124-106.ngrok.io'
+=======
+    this.baseUrl = 'http://4e28-77-231-124-106.ngrok.io'
+>>>>>>> filtrado_categorias
 
   }
 

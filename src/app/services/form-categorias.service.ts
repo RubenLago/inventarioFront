@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { categorias } from '../models/categoria.models';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,11 +10,15 @@ export class FormCategoriasService {
 
   baseUrl: string;
 
+
+
   constructor(
     private httpClient: HttpClient) {
 
     this.baseUrl = 'http://localhost:3000';
   }
+
+
 
   nuevaCategoria(formsValue: any): Promise<any> {
     const httpOptions = {

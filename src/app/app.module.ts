@@ -17,6 +17,8 @@ import { FormProductComponent } from './form-product/form-product.component';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
 import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
+import { CardsCategoriasComponent } from './components/cards-categorias/cards-categorias.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { FormCategoriasComponent } from './components/form-categorias/form-categ
     VistaUsuarioComponent,
     FormNegocioComponent,
     FormCategoriasComponent,
+    CardsCategoriasComponent,
 
   ],
   imports: [

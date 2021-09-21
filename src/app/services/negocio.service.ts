@@ -14,9 +14,7 @@ export class NegocioService {
   constructor(
     private httpClient: HttpClient
   ) {
-
     this.baseUrl = 'http://localhost:3000';
-
   }
 
   nuevoNegocio(formValues: Negocio): Promise<any> {

@@ -96,16 +96,11 @@ export class ProductosComponent implements OnInit {
       .catch(error => console.log(error))
 
   }
-  /* onCategorias($event: any) {
+  onCategorias($event: any) {
     this.categoriaService.getFiltroTextoC($event.target.value)
       .then(categorias => this.arrCategorias = categorias)
       .catch(error => console.log(error))
-
-    this.categoriaService.getFiltroCategoria($event.target.value)
-      .then(categorias => this.arrCategorias = categorias)
-      .catch(error => console.log(error))
-  } */
-
+  }
 }
 
 

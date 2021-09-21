@@ -26,19 +26,16 @@ export class FormCategoriasService {
         'authorization': localStorage.getItem('token')!
       })
     }
-    return this.httpClient.post(`${this.baseUrl}/categorias/create/${formsValue.idNegocio}`, formsValue, httpOptions).toPromise()
+    return this.httpClient.post(`${this.baseUrl}/categorias/create`, formsValue, httpOptions).toPromise()
 
   }
   //autocompletado filtro categoria
   getFiltroTextoC(pTexto: string): Promise<any> {
     return this.httpClient.get(`${this.baseUrl}/categorias/search/${pTexto}`).toPromise()
   }
-  getFiltroCategoria(pTexto: string): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/categorias/search/${pTexto}`).toPromise()
-  }
 
-  getByCategoria(pId: any): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/categorias/filter/${pId}`).toPromise()
+  getByCategoria(pId: number): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/categoria/${pId}`).toPromise()
   }
 
 

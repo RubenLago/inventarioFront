@@ -3,20 +3,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LandingComponent } from './landing/landing.component';
-import { ProductosComponent } from './productos/productos.component';
-import { FormsModule } from '@angular/forms';
-import { UsuariosComponent } from './usuarios/usuarios.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';
-import { FormProductComponent } from './form-product/form-product.component';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
 import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
+import { FormProductComponent } from './components/form-product/form-product.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 
 @NgModule({

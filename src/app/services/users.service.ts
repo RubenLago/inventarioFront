@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { login } from '../models/login.models';
-import { Usuarios } from '../models/usuario.model';
+import { login } from '../interfaces/login.models';
+import { Usuarios } from '../interfaces/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +13,7 @@ export class UsersService {
   constructor(
     private httpClient: HttpClient) {
 
-<<<<<<< HEAD
     this.baseUrl = 'http://localhost:3000';
-=======
-
-    this.baseUrl = 'http://localhost:3000';
-
->>>>>>> 6a41dd766b7ad87dc053744e75c32f3b76cc0f2c
   }
 
 

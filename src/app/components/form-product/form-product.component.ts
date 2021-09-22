@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Producto } from '../models/producto.model';
+import { Producto } from '../../interfaces/producto.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { productsService } from '../services/products.service';
-import { FormCategoriasService } from '../services/form-categorias.service';
+import { productsService } from '../../services/products.service';
+import { FormCategoriasService } from '../../services/form-categorias.service';
 
 @Component({
   selector: 'app-form-product',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Producto } from '../models/producto.model';
+import { Producto } from '../interfaces/producto.model';
 
 export interface producto {
   id: number,
@@ -22,13 +22,7 @@ export class productsService {
   constructor(
     private httpClient: HttpClient) {
 
-<<<<<<< HEAD
     this.baseUrl = 'http://localhost:3000';
-=======
-
-    this.baseUrl = 'http://localhost:3000';
-
->>>>>>> 6a41dd766b7ad87dc053744e75c32f3b76cc0f2c
   }
 
   getAll(): Promise<any[]> {
@@ -51,12 +45,14 @@ export class productsService {
   // }
 
 
+
+  // Creacion de productos
   newProduct(formsValue: Producto) {
     return this.httpClient.post(`${this.baseUrl}/productos/create`, formsValue).toPromise()
 
   }
 
-
+  //Borrado de productos
   deleteProduct(pId: number): Promise<any> {
     return this.httpClient.delete(`${this.baseUrl}/productos/${pId}`).toPromise()
 

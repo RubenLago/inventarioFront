@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LandingComponent } from './landing/landing.component';
-import { ProductosComponent } from './productos/productos.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { ProductosComponent } from './components/productos/productos.component';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
 import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';

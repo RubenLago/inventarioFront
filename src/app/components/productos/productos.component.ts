@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { producto, productsService } from '../services/products.service';
+import { producto, productsService } from '../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormCategoriasService } from '../services/form-categorias.service';
+import { FormCategoriasService } from '../../services/form-categorias.service';
 
 @Component({
   selector: 'app-productos',

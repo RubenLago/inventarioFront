@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { categorias } from '../models/categoria.models';
+import { categorias } from '../interfaces/categoria.models';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class FormCategoriasService {
         'authorization': localStorage.getItem('token')!
       })
     }
-    return this.httpClient.post(`${this.baseUrl}/categorias/create`, formsValue, httpOptions).toPromise()
+    return this.httpClient.post(`${this.baseUrl}/categorias/create$`, formsValue, httpOptions).toPromise()
 
   }
   //autocompletado filtro categoria
@@ -30,7 +30,7 @@ export class FormCategoriasService {
   }
 
   getByCategoria(pId: number): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/categoria/${pId}`).toPromise()
+    return this.httpClient.get(`${this.baseUrl}/categorias/${pId}`).toPromise()
   }
 
 

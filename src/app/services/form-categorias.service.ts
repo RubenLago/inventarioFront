@@ -26,7 +26,7 @@ export class FormCategoriasService {
         'authorization': localStorage.getItem('token')!
       })
     }
-    return this.httpClient.post(`${this.baseUrl}/categorias/create`, formsValue, httpOptions).toPromise()
+    return this.httpClient.post(`${this.baseUrl}/categorias/create/${formsValue.idNegocio}`, formsValue, httpOptions).toPromise()
 
   }
   //autocompletado filtro categoria
@@ -35,7 +35,7 @@ export class FormCategoriasService {
   }
 
   getByCategoria(pId: number): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/categorias/${pId}`).toPromise()
+    return this.httpClient.get(`${this.baseUrl}/categorias/filter/${pId}`).toPromise()
   }
 
 

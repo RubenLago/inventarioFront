@@ -48,7 +48,11 @@ export class FormProductComponent implements OnInit {
 
   async ngOnChanges(changes: SimpleChanges) {
     if (changes['idNegocio']) {
+      console.log('entra');
+
       const response = await this.categoriaService.getByCategoria(changes['idNegocio'].currentValue)
+      console.log(response);
+
       this.arrCategoria = response
     }
   }

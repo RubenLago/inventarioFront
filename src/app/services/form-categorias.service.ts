@@ -26,7 +26,7 @@ export class FormCategoriasService {
         'authorization': localStorage.getItem('token')!
       })
     }
-    return this.httpClient.post(`${this.baseUrl}/categorias/create$`, formsValue, httpOptions).toPromise()
+    return this.httpClient.post(`${this.baseUrl}/categorias/create`, formsValue, httpOptions).toPromise()
 
   }
   //autocompletado filtro categoria

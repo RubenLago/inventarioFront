@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-<<<<<<< HEAD
 import { Negocio } from '../interfaces/negocios.model';
-=======
-import { Negocio } from '../models/negocios.model';
 import { Subject } from 'rxjs';
 import { Observable } from 'rxjs';
->>>>>>> 005535ff0d00898c5c7bae70cd3d59b627a0e6cc
 
 @Injectable({
   providedIn: 'root'

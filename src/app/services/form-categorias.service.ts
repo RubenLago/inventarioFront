@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { categorias } from '../interfaces/categoria.models';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,13 +10,17 @@ export class FormCategoriasService {
 
   baseUrl: string;
 
+
+
   constructor(
     private httpClient: HttpClient) {
 
     this.baseUrl = 'http://localhost:3000';
   }
 
-  nuevaCategoria(formsValue: categorias): Promise<any> {
+
+
+  nuevaCategoria(formsValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'authorization': localStorage.getItem('token')!

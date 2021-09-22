@@ -16,7 +16,6 @@ export class UsersService {
     this.baseUrl = 'http://localhost:3000';
   }
 
-
   registro(formsValue: Usuarios) {
     return this.httpClient.post(`${this.baseUrl}/usuarios/registro`, formsValue).toPromise()
   }

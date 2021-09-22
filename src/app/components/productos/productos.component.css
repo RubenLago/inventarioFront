@@ -16,3 +16,7 @@
     font-family: var(--fuenteprincipal);
     font-weight: 100;
 }
+
+#tabla td th{
+background-color: white;
+}

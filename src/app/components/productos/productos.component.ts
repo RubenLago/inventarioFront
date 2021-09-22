@@ -18,9 +18,9 @@ export class ProductosComponent implements OnInit {
   negocioid: number;
 
   constructor(
+    private productsService: productsService,
     private categoriaService: FormCategoriasService,
     private activatedRoute: ActivatedRoute,
-    private productsService: productsService,
     private router: Router) {
     this.arrProductos = [];
     this.arrCategorias = [];
@@ -29,13 +29,12 @@ export class ProductosComponent implements OnInit {
       id: new FormControl('', []),
       nombre: new FormControl('', [Validators.required]),
       formato: new FormControl('', []),
-      categoria: new FormControl('', []),
+      fk_categoria_id: new FormControl('', []),
       cantidad: new FormControl('', [
         Validators.pattern(/^[1-9]\d{6,10}$/)]),
       iva: new FormControl('', []),
       precioSin: new FormControl('', []),
     })
-
     this.negocioid = 0
 
 
@@ -63,8 +62,6 @@ export class ProductosComponent implements OnInit {
 
 
   async addProduct() {
-    console.log(this.negocioid);
-
     this.formulario.value.fk_negocio_id = this.negocioid;
     const newProduct = await this.productsService.newProduct(this.formulario.value)
     if (newProduct) {
@@ -80,8 +77,7 @@ export class ProductosComponent implements OnInit {
       this.productsService.getAll()
         .then(posts => this.arrProductos = posts)
         .catch(error => console.log(error))
-
-    }
+    } confirm(`¿Estas seguro de que quieres borrar el producto`)
   }
 
   cerrarForm($event: any) {
@@ -95,11 +91,13 @@ export class ProductosComponent implements OnInit {
       .then(products => this.arrProductos = products)
       .catch(error => console.log(error))
 
+
   }
-  onCategorias($event: any) {
-    this.categoriaService.getFiltroTextoC($event.target.value)
-      .then(categorias => this.arrCategorias = categorias)
+  onCategoria($event: any) {
+    this.categoriaService.getFiltroTextoC(this.negocioid, $event.target.value)
+      .then(categorias => this.arrProductos = categorias)
       .catch(error => console.log(error))
+
   }
 }
 

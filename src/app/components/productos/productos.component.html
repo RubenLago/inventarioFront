@@ -1,5 +1,5 @@
 <div class="row p-4">
-    <h5 class="col-12 border-bottom border-bottom-secondary">Productos</h5>
+    <h5 class="col-12 border-bottom border-bottom-secondary">Productos </h5>
 </div>
 
 <div class="container">
@@ -13,8 +13,7 @@
             <input type="text" (input)="onInput($event)" placeholder="BUSCAR POR NOMBRE">
         </div>
         <div class="col-sm btn btn-outline-secondary">
-            <input type="text" placeholder="BUSCAR POR CATEGORIAS">
-            <!-- (input)="onCategorias($event)" -->
+            <input type="text" (input)="onCategoria($event)" placeholder="BUSCAR POR CATEGORIAS">
         </div>
     </div>
 </div>
@@ -31,11 +30,11 @@
 </div>
 <!-- tabla -->
 <div class="container">
-    <table id="tabla" class="table table-secondary table-striped">
+    <table id="tabla" class="table">
         <!-- tabla -->
         <div class="container">
 
-            <table class="table table-secondary table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Producto</th>
@@ -55,9 +54,9 @@
                         <td>{{producto.formato}}</td>
                         <td>{{producto.cantidad}}</td>
                         <td>{{producto.nombre_categoria}}</td>
-                        <td>{{producto.precioSin}}</td>
-                        <td>{{producto.iva}}</td>
-                        <td>{{producto.precioCon}}</td>
+                        <td>{{producto.precioSin}}€</td>
+                        <td>{{producto.iva}}%</td>
+                        <td>{{producto.precioCon}}€</td>
                         <td> <button type="button" class="btn btn-dark" data-bs-toggle="modal"
                                 [attr.data-bs-target]="'#editModal'+producto.id">Editar</button></td>
                         <td> <button type="button" class="btn btn-dark"
@@ -77,7 +76,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- formu -->
-            <app-form-product (formOut)='cerrarForm($event)' [producto]="producto"></app-form-product>
+            <app-form-product [idNegocio]="negocioid" (formOut)='cerrarForm($event)' [producto]="producto">
+            </app-form-product>
         </div>
     </div>
 </div>

@@ -70,8 +70,8 @@
                                 <p class="error" *ngIf="checkControl('password', 'pattern')">
                                     El campo 'contraseña' es incorrecto
                                 </p>
-                                <p class="error" *ngIf="checkControl('email', 'pattern')">
-                                    El campo 'contraseña' debe contener, un numero, un simbolo y una mayuscula
+                                <p class="error" *ngIf="checkControl('password', 'pattern')">
+                                    Debe contener, un numero, un simbolo y una mayuscula
                                 </p>
                                 <p class="error" *ngIf="checkControl('repeat_password', 'passwordValidator')">
                                     Las contraseñas no coinciden
@@ -89,7 +89,7 @@
                                 </p>
                             </div>
                         </div>
-                        <button id="button-register" class="btn btn-primary" type="submit">Registrarse</button>
+                        <button id="button-register" class="btn btn-primary" type="submit"> Registrarse</button>
                         <div id="iniciarsesion">
                             <p>¿Ya tienes una cuenta?</p>
                             <a id="registrate" href="/login">

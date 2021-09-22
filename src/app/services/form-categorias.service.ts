@@ -30,8 +30,8 @@ export class FormCategoriasService {
 
   }
   //autocompletado filtro categoria
-  getFiltroTextoC(pTexto: string): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/categorias/search/${pTexto}`).toPromise()
+  getFiltroTextoC(pId: number, pTexto: string): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/categorias/search/${pId}/${pTexto}`).toPromise()
   }
 
   getByCategoria(pId: number): Promise<any> {

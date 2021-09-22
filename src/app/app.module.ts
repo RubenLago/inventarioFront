@@ -16,6 +16,7 @@ import { FormNegocioComponent } from './components/form-negocio/form-negocio.com
 import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { VistaReportComponent } from './components/vista-report/vista-report.component';
 import { ProductosComponent } from './components/productos/productos.component';
 
 
@@ -33,6 +34,7 @@ import { ProductosComponent } from './components/productos/productos.component';
     VistaUsuarioComponent,
     FormNegocioComponent,
     FormCategoriasComponent,
+    VistaReportComponent,
 
   ],
   imports: [

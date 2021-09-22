@@ -69,9 +69,4 @@ export class productsService {
     return this.httpClient.get(`${this.baseUrl}/productos/negocios/${pId}/${pTexto}`).toPromise()
   }
 
-
-
-
-
-
 }

@@ -8,6 +8,7 @@ import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.
 import { FormNegocioComponent } from './components/form-negocio/form-negocio.component';
 import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
 import { LoginGuard } from './login.guard';
+import { VistaReportComponent } from './components/vista-report/vista-report.component';
 /* import { Usuarios } from './models/usuario.model'; */
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   /*  { path: 'listaUsuario', component: Usuarios }, */
   {
     path: 'report', component: VistaUsuarioComponent, canActivate: [LoginGuard], children: [
+      { path: '', component: VistaReportComponent },
       { path: 'negocio/create', component: FormNegocioComponent },
       { path: 'negocio/:idNegocio', component: ProductosComponent },
       { path: 'negocio/:idNegocio/:filtro', component: ProductosComponent },

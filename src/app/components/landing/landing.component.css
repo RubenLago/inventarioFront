@@ -6,7 +6,32 @@
     background-color: var(--colorprincipal);   
 }
 h2.bordes{
-    border: 2px solid var(--colorprincipal);
+    border: 2px solid #33d9b2;
+    font-size: 2.7em;
+    font-weight: 1000;
+}
+
+p{
+    font-weight: 400;
+}
+
+#enalacesInternos a{
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#enlacesInternos a:hover{
+    text-decoration: none;
+    background-color: var(--colorsecundario);
+
+}
+#enlacesExternos a{
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#enlacesExternos a:hover{
+    color: var(--colorsecundario);
 }
 
 /* imagen cabecera */
@@ -144,3 +169,9 @@ body {
 -ms-transform: scale(1.1);
 transform: scale(1.1);
 }
+
+#anclaServicios i{
+    color: var(--colorsecundario);
+    margin-right: 10px;
+}
+

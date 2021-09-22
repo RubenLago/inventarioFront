@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 
 @Component({
@@ -12,8 +13,11 @@ export class SignUpComponent implements OnInit {
   formulario: FormGroup
 
   constructor(
-    private usersService: UsersService
+    private usersService: UsersService,
+    private router: Router
+
   ) {
+
     this.formulario = new FormGroup({
       nombre: new FormControl('', [
         Validators.required
@@ -54,7 +58,10 @@ export class SignUpComponent implements OnInit {
 
   async onSubmit() {
     const response = await this.usersService.registro(this.formulario.value);
-    console.log(this.formulario.value)
+    alert('Usuario creado')
+    this.router.navigateByUrl('/login')
+
+
 
   }
 
